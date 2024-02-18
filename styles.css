@@ -1,7 +1,91 @@
+body {
+    width: 1280px;
+}
+
+
 h1 {
     color: green;
 }
 
+#logo {
+    position: absolute;
+    left: 150px;
+    top: 50px;
+}
+
 header {
-    background-color: lightblue;
+    height: 150px;
+}
+
+nav {
+    position: relative;
+    left: 350px;
+    top: 55px;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav li:nth-child(-n+2) {
+    border-right: 5px solid black;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    
+    font-size: 2em;
+    font-family: "Work Sans", sans-serif;
+    font-weight: bold;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    color: lightslategray;
+    
+}
+
+#noNight {
+    position: relative;
+    left: 1050px;
+    bottom: 10px;
+}
+
+#noNight:hover {
+    color: lightslategray;
+}
+
+.moon {
+    color: black;
+    
+}
+
+header {
+    background: linear-gradient(to bottom, #FFA500, lightblue);
+    
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+#logo {
+    height: 80px;
+}
+
+.hidden {
+    position: absolute;
+    visibility: hidden;
+}
+
+nav ul {
+    display: flex;
+}
+
+
+
+#drones img, #cams img {
+    background-color: lightgray;
+    height: 500px;
+    width: 500px;
 }
