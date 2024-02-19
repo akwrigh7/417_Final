@@ -14,6 +14,11 @@ body {
     width: 1280px;
 }
 
+nav a, h2, #about, h3, #cams p, #cams h4, #cams button, #drones p, #drones h4, #drones button {
+    font-family: "Work Sans", sans-serif;
+}
+
+
 h1 {
     color: green;
 }
@@ -49,7 +54,6 @@ nav a {
     color: black;
     padding: 10px;
     font-size: 2em;
-    font-family: "Work Sans", sans-serif;
     font-weight: bold;
     margin-right: 25px;
     margin-left: 25px;
@@ -89,7 +93,6 @@ nav a:hover {
 }
 
 h2 {
-    font-family: "Work Sans", sans-serif;
     font-weight: bold;
     font-size: 3em;
 }
@@ -111,14 +114,16 @@ h2 {
 
 #drones img, #cams img {
     background-color: lightgray;
-    height: 300px;
-    width: 300px;
+    height: 240px;
+    width: 240px;
+    border-radius: 8%;
+    
 }
 
 #about {
     margin-top: 50px;
     font-weight: bold;
-    font-family: "Work Sans", sans-serif;
+    
     font-size: 1.5em;
     line-height: 2em;
 }
@@ -171,20 +176,68 @@ h2 {
 
 h3 {
     font-size: 1.8em;
-    font-family: "Work Sans", sans-serif;
 }
 
 #shop {
+    background-color: lightgray;
     
 }
 
-#drones {
-    display: grid;
-    grid-template-columns: 2fr 2fr;
-}
-
 #drones, #cams {
-    width: 620px
+    display: flex;
+    margin: 25px;
 }
 
+#drones section, #cams section {
+    height: 350px;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    
+}
 
+#shop h3 {
+    text-align: center;
+    margin-top: 30px;
+    border: 3px solid black;
+    width: 250px;
+    margin-left: 510px;
+}
+
+#cams {
+    border-bottom: 3px solid black;
+    padding-bottom: 30px;
+}
+
+#cams h4, #drones h4 {
+    font-size: 1.5em;
+    text-align: center;
+    padding-bottom: 10px
+}
+
+#cams p, #drones p {
+    font-size: 1.7em;
+    position: relative;
+    top: 5px;
+    left: 20px;
+}
+
+#cams button, #drones button {
+    position: relative;
+    left: 130px;
+    bottom: 25px;
+    background-color: lightblue;
+    color: black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#cams button:hover , #drones button:hover {
+    color: white;
+    background-color: blue;
+}
+
+.green {
+    color: green;
+}
