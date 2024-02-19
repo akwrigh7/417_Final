@@ -1,26 +1,38 @@
-body {
-    width: 1280px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+html {
+   
+    
+}
+
+body {
+    margin: 0 auto;
+    width: 1280px;
+}
 
 h1 {
     color: green;
 }
 
 #logo {
-    position: absolute;
+    position: relative;
     left: 150px;
-    top: 50px;
+    top: 10px;
+    
 }
 
 header {
-    height: 150px;
+    height: 100px;
 }
 
 nav {
     position: relative;
-    left: 350px;
-    top: 55px;
+    left: 400px;
+    top: -51px;
 }
 
 nav li {
@@ -35,12 +47,15 @@ nav a {
     text-decoration: none;
     color: black;
     padding: 10px;
-    
     font-size: 2em;
     font-family: "Work Sans", sans-serif;
     font-weight: bold;
     margin-right: 25px;
     margin-left: 25px;
+}
+
+nav ul {
+    display: flex;
 }
 
 nav a:hover {
@@ -51,7 +66,7 @@ nav a:hover {
 #noNight {
     position: relative;
     left: 1050px;
-    bottom: 10px;
+    bottom: 100px;
 }
 
 #noNight:hover {
@@ -63,11 +78,6 @@ nav a:hover {
     
 }
 
-header {
-    background: linear-gradient(to bottom, #FFA500, lightblue);
-    
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
-}
 
 #logo {
     height: 80px;
@@ -78,14 +88,87 @@ header {
     visibility: hidden;
 }
 
-nav ul {
-    display: flex;
+h2 {
+    font-family: "Work Sans", sans-serif;
+    font-weight: bold;
+    font-size: 3em;
 }
 
+#products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 80px;
+    
+}
 
+#products h2 {
+    
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#drones, #cams {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
 
 #drones img, #cams img {
     background-color: lightgray;
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
 }
+
+#hero {
+    width: 100%
+}
+
+#about {
+    margin-top: 50px;
+    font-weight: bold;
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
+#about h2 {
+    text-align: center;
+}
+
+.aboutPhoto {
+    width: 600px;
+}
+
+#abt1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#abt1 img {
+    margin-left: 30px;
+}
+
+#abt1 p, #abt2 p {
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: light;
+}
+
+#abt2 {
+    border-top: 5px solid black;
+    padding-top: 50px;
+    margin-top: 50px;
+    
+}
+
+#abt2 p {
+    width: 580px;
+    position: absolute;
+    top: 1315px;
+}
+
+
+#abt2 img {
+    margin-left: 50%;
+}
+
