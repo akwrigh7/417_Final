@@ -21,18 +21,19 @@ h1 {
 #logo {
     position: relative;
     left: 150px;
-    top: 10px;
-    
+    top: 15px;
+    height: 60px;
 }
 
 header {
     height: 100px;
+    background-color: lightgray;
 }
 
 nav {
     position: relative;
     left: 400px;
-    top: -51px;
+    top: -35px;
 }
 
 nav li {
@@ -66,7 +67,7 @@ nav a:hover {
 #noNight {
     position: relative;
     left: 1050px;
-    bottom: 100px;
+    bottom: 80px;
 }
 
 #noNight:hover {
@@ -78,9 +79,8 @@ nav a:hover {
     
 }
 
-
-#logo {
-    height: 80px;
+#hero {
+    margin-bottom: -5px;
 }
 
 .hidden {
@@ -94,33 +94,25 @@ h2 {
     font-size: 3em;
 }
 
-#products {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 80px;
+#shop {
+    
+    
     
 }
 
-#products h2 {
-    
-    margin-bottom: 20px;
+#shop h2, #contact h2 {
+    width: 1280px;
     text-align: center;
+    background-color: rgb(251, 161, 112);
+    padding-bottom: 5px;
 }
 
-#drones, #cams {
-    position: relative;
-    width: 600px;
-    height: 600px;
-}
+
 
 #drones img, #cams img {
     background-color: lightgray;
-    height: 600px;
-    width: 600px;
-}
-
-#hero {
-    width: 100%
+    height: 300px;
+    width: 300px;
 }
 
 #about {
@@ -158,17 +150,41 @@ h2 {
     border-top: 5px solid black;
     padding-top: 50px;
     margin-top: 50px;
-    
 }
 
 #abt2 p {
     width: 580px;
     position: absolute;
-    top: 1315px;
+    top: 1295px;
 }
-
 
 #abt2 img {
-    margin-left: 50%;
+    margin-left: 51%;
 }
+
+#about {
+    background-color: lightgray;
+    padding-top: 40px;
+    margin-top: 0;
+    padding-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-family: "Work Sans", sans-serif;
+}
+
+#shop {
+    
+}
+
+#drones {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+#drones, #cams {
+    width: 620px
+}
+
 
