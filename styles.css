@@ -155,7 +155,7 @@ h2 {
 #abt2 p {
     width: 580px;
     position: absolute;
-    top: 1295px;
+    top: 1320px;
 }
 
 #abt2 img {
@@ -253,5 +253,6 @@ figcaption a {
 }
 
 #figTwo {
-
+    margin-left: 680px;
+    bottom: -660px
 }
