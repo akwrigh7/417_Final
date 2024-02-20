@@ -97,16 +97,10 @@ h2 {
     font-size: 3em;
 }
 
-#shop {
-    
-    
-    
-}
-
 #shop h2, #contact h2 {
     width: 1280px;
     text-align: center;
-    background-color: rgb(251, 161, 112);
+    background-color: rgb(101, 202, 235);
     padding-bottom: 5px;
 }
 
@@ -155,6 +149,7 @@ h2 {
     border-top: 5px solid black;
     padding-top: 50px;
     margin-top: 50px;
+    margin-bottom: 30px;
 }
 
 #abt2 p {
@@ -194,7 +189,7 @@ h3 {
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
-    
+    margin-left: 15px
 }
 
 #shop h3 {
@@ -240,4 +235,23 @@ h3 {
 
 .green {
     color: green;
+}
+
+figcaption {
+    position: absolute;
+    font-style: italic;
+    font-size: .8em;
+}
+
+figcaption a {
+    color: black;
+}
+
+#figOne {
+    margin-left: 50px;
+    bottom: -200px
+}
+
+#figTwo {
+
 }
