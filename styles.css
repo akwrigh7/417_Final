@@ -11,34 +11,37 @@ html {
 
 body {
     margin: 0 auto;
-    width: 1280px;
+    
 }
 
 nav a, h2, #about, h3, #cams p, #cams h4, #cams button, #drones p, #drones h4, #drones button {
     font-family: "Work Sans", sans-serif;
 }
 
-
-h1 {
-    color: green;
-}
-
 #logo {
-    position: relative;
-    left: 150px;
-    top: 15px;
     height: 60px;
 }
 
 header {
-    height: 100px;
+    
     background-color: lightgray;
+}
+
+
+header div {
+    max-width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    height: 100px;
+    
+
 }
 
 nav {
     position: relative;
-    left: 400px;
-    top: -35px;
+    
 }
 
 nav li {
@@ -68,12 +71,6 @@ nav a:hover {
     
 }
 
-#noNight {
-    position: relative;
-    left: 1050px;
-    bottom: 80px;
-}
-
 #noNight:hover {
     color: lightslategray;
 }
@@ -84,7 +81,14 @@ nav a:hover {
 }
 
 #hero {
-    margin-bottom: -5px;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: block;
+}
+
+#heroDiv {
+    background: rgb(157, 157, 157);
 }
 
 .hidden {
@@ -98,9 +102,9 @@ h2 {
 }
 
 #shop h2, #contact h2 {
-    width: 1280px;
+    
     text-align: center;
-    background-color: rgb(101, 202, 235);
+    background-color: rgb(157, 157, 157);
     padding-bottom: 5px;
 }
 
@@ -114,12 +118,20 @@ h2 {
     
 }
 
+#aboutDiv {
+    background: lightgray;
+
+}
+
+
 #about {
-    margin-top: 50px;
-    font-weight: bold;
-    
-    font-size: 1.5em;
+    font-size: 1.4em;
     line-height: 2em;
+    background-color: lightgray;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 #about h2 {
@@ -127,46 +139,39 @@ h2 {
 }
 
 .aboutPhoto {
+    
     width: 600px;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
-#abt1 {
+#abt1, #abt2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-#abt1 img {
-    margin-left: 30px;
-}
-
 #abt1 p, #abt2 p {
+    background-color: light;
+    width: 550px;
     margin-left: 30px;
     margin-right: 30px;
-    background-color: light;
+    padding-top: 10px;
 }
 
 #abt2 {
-    border-top: 5px solid black;
-    padding-top: 50px;
     margin-top: 50px;
-    margin-bottom: 30px;
+    
 }
 
-#abt2 p {
-    width: 580px;
-    position: absolute;
-    top: 1320px;
+figcaption {
+    font-style: italic;
+    font-size: .8em;
+    text-align: center;
+    margin-top: -15px;
 }
 
-#abt2 img {
-    margin-left: 51%;
-}
-
-#about {
-    background-color: lightgray;
-    padding-top: 40px;
-    margin-top: 0;
-    padding-bottom: 20px;
+figcaption a {
+    color: black;
 }
 
 h3 {
@@ -176,6 +181,7 @@ h3 {
 #shop {
     background-color: lightgray;
     
+    
 }
 
 #drones, #cams {
@@ -184,24 +190,23 @@ h3 {
 }
 
 #drones section, #cams section {
-    height: 350px;
+    
     background-color: whitesmoke;
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
-    margin-left: 15px
+    
 }
 
 #shop h3 {
     text-align: center;
     margin-top: 30px;
-    border: 3px solid black;
-    width: 250px;
-    margin-left: 510px;
+    
+    
+    
 }
 
 #cams {
-    border-bottom: 3px solid black;
     padding-bottom: 30px;
 }
 
@@ -213,46 +218,24 @@ h3 {
 
 #cams p, #drones p {
     font-size: 1.7em;
-    position: relative;
-    top: 5px;
-    left: 20px;
+    
 }
 
 #cams button, #drones button {
-    position: relative;
-    left: 130px;
-    bottom: 25px;
     background-color: lightblue;
     color: black;
     border-radius: 10px;
+    cursor: pointer;
     padding: 5px;
 }
 
 #cams button:hover , #drones button:hover {
-    color: white;
-    background-color: blue;
+    background-color: rgb(143, 212, 235);
+    transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .green {
     color: green;
 }
 
-figcaption {
-    position: absolute;
-    font-style: italic;
-    font-size: .8em;
-}
-
-figcaption a {
-    color: black;
-}
-
-#figOne {
-    margin-left: 50px;
-    bottom: -200px
-}
-
-#figTwo {
-    margin-left: 680px;
-    bottom: -660px
-}
