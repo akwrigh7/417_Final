@@ -101,15 +101,6 @@ h2 {
     font-size: 3em;
 }
 
-#shop h2, #contact h2 {
-    
-    text-align: center;
-    background-color: rgb(157, 157, 157);
-    padding-bottom: 5px;
-}
-
-
-
 #drones img, #cams img {
     background-color: lightgray;
     height: 240px;
@@ -178,16 +169,33 @@ h3 {
     font-size: 1.8em;
 }
 
-#shop {
+#shopDiv {
     background-color: lightgray;
+}
+
+#shop {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+#shopHead {
     
+    background-color: rgb(157, 157, 157);
+}
+
+#shop h2, #contact h2 {
+    text-align: center;
     
+    padding-bottom: 5px;
+    max-width: 5000px
 }
 
 #drones, #cams {
     display: flex;
+    justify-content: space-around;
     margin: 25px;
 }
+
 
 #drones section, #cams section {
     
