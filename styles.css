@@ -162,6 +162,10 @@ figcaption a {
     color: black;
 }
 
+figcaption a:hover {
+    color: blue;
+}
+
 h3 {
     font-size: 1.8em;
 }
@@ -176,11 +180,12 @@ h3 {
 }
 
 #shopHead {
-    
+    text-align: center;
     background-color: rgb(157, 157, 157);
+    padding-bottom: 5px;
 }
 
-#shop h2, #contactDiv h2 {
+#contactDiv h2 {
     text-align: center;
     background-color: rgb(157, 157, 157);
     padding-bottom: 5px;
@@ -316,8 +321,9 @@ h3 {
 }
 
 
-#socials a {
-    background-color: green;
+#socials svg {
+    height: 70px;
+    width: 70px;
 }
 
 small {
