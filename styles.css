@@ -4,11 +4,6 @@
     box-sizing: border-box;
 }
 
-html {
-   
-    
-}
-
 body {
     margin: 0 auto;
     
@@ -185,9 +180,9 @@ h3 {
 
 #shop h2, #contact h2 {
     text-align: center;
-    
+    background-color: rgb(157, 157, 157);
     padding-bottom: 5px;
-    max-width: 5000px
+    
 }
 
 #drones, #cams {
@@ -203,15 +198,12 @@ h3 {
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
-    
+    height: 360px;
 }
 
 #shop h3 {
     text-align: center;
     margin-top: 30px;
-    
-    
-    
 }
 
 #cams {
@@ -221,7 +213,7 @@ h3 {
 #cams h4, #drones h4 {
     font-size: 1.5em;
     text-align: center;
-    padding-bottom: 10px
+    padding-bottom: 10px;
 }
 
 #cams p, #drones p {
@@ -234,13 +226,20 @@ h3 {
     color: black;
     border-radius: 10px;
     cursor: pointer;
-    padding: 5px;
+    padding: 6px;
 }
 
 #cams button:hover , #drones button:hover {
-    background-color: rgb(143, 212, 235);
+    background-color: rgb(53, 177, 218);
     transform: translateY(-2px);
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.shopItems {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
 }
 
 .green {
