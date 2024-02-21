@@ -9,7 +9,7 @@ body {
     
 }
 
-nav a, h2, #about, h3, #cams p, #cams h4, #cams button, #drones p, #drones h4, #drones button {
+nav a, h2, h3, p, h4, button, figcaption {
     font-family: "Work Sans", sans-serif;
 }
 
@@ -208,6 +208,7 @@ h3 {
 
 #cams {
     padding-bottom: 30px;
+    border-bottom: 5px solid black;
 }
 
 #cams h4, #drones h4 {
@@ -246,3 +247,46 @@ h3 {
     color: green;
 }
 
+#cart {
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+
+#cartSVG {
+    height:150px;
+    width: 150px;
+    margin-top: -10px;
+}
+
+#cartContents {
+    border-right: 5px solid black;
+    border-left: 5px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#cart h4, #cart p {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#cart h4 {
+    margin-bottom: 45px;
+}
+
+#checkOut {
+    padding: 30px;
+    background-color: lightblue;
+    font-size: 1.1em;
+    border-radius: 20px;
+}
+
+#checkOut:hover {
+    background-color: rgb(53, 177, 218);
+    transform: translateY(-10px);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 15px 15px;
+}
