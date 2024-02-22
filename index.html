@@ -202,22 +202,24 @@
                     <section>
                         <h3>Have Feedback?</h3>
                         <form>
-                            <label for="myName">Full Name<span class="required">*</span></label>
-                            <input type="text" name="myName" id="myName" autocomplete="name" placeholder="Ex. John Doe Smith" required>
-                            <label for="myEmail">Email<span class="required">*</span></label>
-                            <input type="email" name="myEmail" id="myEmail" autocomplete="email" placeholder="Ex. jdoe48@asu.edu" required>
-                            <label for="myPhone">Phone<span class="required">*</span></label>
-                            <input type="tel" name="myPhone" id="myPhone" autocomplete="tel" placeholder="Ex. 123-456-7890" required>
+                            <label for="myFirst">First Name<span class="required">*</span></label>
+                            <input type="text" name="myFirst" id="myFirst" autocomplete="given-name" placeholder="Enter first name" required>
+                            <label for="myLast">Last Name<span class="required">*</span></label>
+                            <input type="text" name="myLast" id="myLast" autocomplete="family-name" placeholder="Enter last name" required>
+                            <label for="myEmail">Email</label>
+                            <input type="email" name="myEmail" id="myEmail" autocomplete="email" placeholder="Ex. jdoe48@asu.edu">
+                            <label for="myPhone">Phone</label>
+                            <input type="tel" name="myPhone" id="myPhone" autocomplete="tel" placeholder="Ex. 123-456-7890">
                             <fieldset>
-                                <legend>Preffered Contact Method<span class="required">*</span></legend>
+                                <legend>Preferred Contact Method<span class="required">*</span></legend>
                                 <input type="radio" name="contactPref" id="prefPhone" checked>
                                 <label for="prefPhone">Phone</label>
                                 <input type="radio" name="contactPref" id="prefEmail">
                                 <label for="prefEmail">Email</label>
                             </fieldset>
-                            <label for="myMessage">Message</label>
-                            <textarea name="myMessage" id="myMessage" placeholder="Questions? Comments? Concerns?"></textarea>
-                            <input type="submit" name="mySubmit" id="mySubmit">
+                            <label for="myMessage">Message<span class="required">*</span></label>
+                            <textarea name="myMessage" id="myMessage" required></textarea>
+                            <button type="submit" name="mySubmit" id="mySubmit">Submit</button>
                         </form>
                     </section>
 
