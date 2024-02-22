@@ -39,10 +39,6 @@ h3 {
 Header
 */
 
-header {
-    background-color: lightgray;
-}
-
 header div {
     max-width: 1280px;
     display: flex;
@@ -113,14 +109,7 @@ Hero Image
     display: block;
 }
 
-#heroDiv {
-    background: rgb(157, 157, 157);
-}
 
-#aboutDiv {
-    background: lightgray;
-
-}
 
 /*
 Start of About Section------------------------------------------------------------------------------
@@ -129,7 +118,6 @@ Start of About Section----------------------------------------------------------
 #about {
     font-size: 1.4em;
     line-height: 2em;
-    background-color: lightgray;
     padding-top: 40px;
     padding-bottom: 20px;
     max-width: 1280px;
@@ -187,10 +175,6 @@ End of About Section------------------------------------------------------------
 Start of Shop Section------------------------------------------------------------------------------
 */
 
-#shopDiv {
-    background-color: lightgray;
-}
-
 #shop {
     max-width: 1280px;
     margin: 0 auto;
@@ -198,7 +182,7 @@ Start of Shop Section-----------------------------------------------------------
 
 #shopHead {
     text-align: center;
-    background-color: rgb(157, 157, 157);
+    
     padding-bottom: 5px;
 }
 
@@ -348,10 +332,6 @@ Start of Contact----------------------------------------------------------------
     font-size: 1.4em;
 }
 
-#contactDiv {
-    background-color: lightgray;
-}
-
 #socials figcaption {
     margin-top: 0;
 }
@@ -380,7 +360,6 @@ Start of Contact----------------------------------------------------------------
 
 #contactDiv h2 {
     text-align: center;
-    background-color: rgb(157, 157, 157);
     padding-bottom: 5px;
     
 }
@@ -492,7 +471,6 @@ Start of Footer-----------------------------------------------------------------
 */
 
 #footerDiv {
-    background-color: rgb(157, 157, 157);
     justify-content: center;
     height: 80px;
     display: flex;
@@ -508,3 +486,22 @@ small {
 /*
 End of Footer------------------------------------------------------------------------------
 */
+
+
+
+
+.lightHead {
+    background-color: rgb(157, 157, 157);
+}
+
+.lightMain {
+    background-color: lightgray;
+}
+
+.darkHead {
+    background-color: rgb(20, 20, 20);
+}
+
+.darkMain {
+    background-color: rgb(40, 40, 40);
+}
