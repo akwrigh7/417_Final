@@ -358,6 +358,10 @@ Start of Contact----------------------------------------------------------------
     margin-right: 30px;
 }
 
+#contactHead {
+    text-align: center;
+}
+
 #contactDiv h2 {
     text-align: center;
     padding-bottom: 5px;
