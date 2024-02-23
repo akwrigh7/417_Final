@@ -17,7 +17,7 @@ body {
     
 }
 
-nav a, h2, h3, p, h4, button, figcaption, form, input, textarea {
+nav a, h2, h3, p, h4, button, figcaption, form, input, textarea, #skip {
     font-family: "Work Sans", sans-serif;
 }
 
@@ -34,6 +34,23 @@ h2 {
 h3 {
     font-size: 1.8em;
 }
+
+#skip {
+    background: whitesmoke;
+    height: 40px;
+    padding: 10px;
+    position: absolute;
+    transform: translateY(-150%);
+    transition: transform 0.4s;
+    color: black;
+    left: 50%;
+    text-decoration: none;
+  }
+  
+  #skip:focus {
+    transform: translateY(0%);
+    
+  }
 
 /*
 Header
@@ -57,15 +74,14 @@ nav li {
 }
 
 nav li:nth-child(-n+2) {
-    border-right: 5px solid black;
+    border-right: 5px solid whitesmoke;
 }
 
 nav a {
     text-decoration: none;
-    color: black;
     padding: 10px;
-    font-size: 2em;
-    font-weight: bold;
+    font-size: 1.6em;
+    
     margin-right: 25px;
     margin-left: 25px;
 }
@@ -86,11 +102,6 @@ nav a:hover {
 
 #noNight:hover {
     color: lightslategray;
-}
-
-.moon {
-    color: black;
-    
 }
 
 /*
@@ -159,10 +170,6 @@ figcaption {
     margin-top: -15px;
 }
 
-figcaption a {
-    color: black;
-}
-
 figcaption a:hover {
     color: blue;
 }
@@ -180,15 +187,16 @@ Start of Shop Section-----------------------------------------------------------
     margin: 0 auto;
 }
 
-#shopHead {
+#shopHead, #contactHead {
     text-align: center;
-    
-    padding-bottom: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 #shop h3 {
     text-align: center;
     margin-top: 30px;
+    
 }
 
 /*
@@ -281,8 +289,6 @@ Start of Cart
 }
 
 #cartContents {
-    border-right: 5px solid black;
-    border-left: 5px solid black;
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -356,10 +362,6 @@ Start of Contact----------------------------------------------------------------
     height: 700px;
     margin-left: 30px;
     margin-right: 30px;
-}
-
-#contactHead {
-    text-align: center;
 }
 
 #contactDiv h2 {
@@ -502,10 +504,28 @@ End of Footer-------------------------------------------------------------------
     background-color: lightgray;
 }
 
+.lightText {
+    color: black;
+}
+
+.lightBorder {
+    border-right: 5px solid black;
+    border-left: 5px solid black;
+}
+
 .darkHead {
     background-color: rgb(20, 20, 20);
 }
 
 .darkMain {
     background-color: rgb(40, 40, 40);
+}
+
+.darkText {
+    color: whitesmoke;
+}
+
+.darkBorder {
+    border-right: 5px solid white;
+    border-left: 5px solid white;
 }
