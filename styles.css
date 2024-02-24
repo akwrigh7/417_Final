@@ -171,7 +171,7 @@ figcaption {
 }
 
 figcaption a:hover {
-    color: blue;
+    color: rgb(76, 76, 176);
 }
 
 /*
@@ -218,7 +218,7 @@ Start of Items
 
 #drones section, #cams section {
     
-    background-color: whitesmoke;
+    
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
@@ -237,22 +237,14 @@ Start of Items
 }
 
 #cams button, #drones button {
-    background-color: lightblue;
-    color: black;
     border-radius: 10px;
     cursor: pointer;
     padding: 6px;
 }
 
-#cams button:hover , #drones button:hover {
-    background-color: rgb(53, 177, 218);
-    transform: translateY(-2px);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-}
-
 #cams {
-    padding-bottom: 30px;
-    border-bottom: 5px solid black;
+    padding-bottom: 50px;
+    border-bottom: 5px solid white;
 }
 
 .shopItems {
@@ -278,17 +270,18 @@ Start of Cart
     max-width: 1280px;
     display: flex;
     justify-content: space-around;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    padding-top: 30px;
     align-items: center;
 }
 
 #cartSVG {
-    height:150px;
-    width: 150px;
+    height:130px;
+    width: 130px;
     margin-top: -10px;
 }
 
-#cartContents {
+#cartItems {
     padding-left: 20px;
     padding-right: 20px;
 }
@@ -303,17 +296,17 @@ Start of Cart
 }
 
 #checkOut {
-    padding: 30px;
-    background-color: lightblue;
+    padding: 20px;
+    
     font-size: 1.1em;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 #checkOut:hover {
-    background-color: rgb(53, 177, 218);
+    
     transform: translateY(-10px);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 15px 15px;
+
 }
 
 /*
@@ -408,6 +401,7 @@ input {
     font-size: .8em;
     padding-left: 20px;
     width: 100%;
+    
 }
 
 fieldset {
@@ -446,18 +440,16 @@ legend {
     width: 200px;
     display: block;
     margin: 0 auto;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-top: 30px;
     cursor: pointer;
-    background-color: lightblue;
     padding: 20px;
     font-size: .8em;
 }
 
 #mySubmit:hover {
-    background-color: rgb(53, 177, 218);
     transform: translateY(-10px);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 15px 15px;
+    
 }
 
 /*
@@ -513,6 +505,17 @@ End of Footer-------------------------------------------------------------------
     border-left: 5px solid black;
 }
 
+.lightButton {
+    background-color: lightblue;
+    color: black;
+}
+
+.lightButton:hover {
+    background-color: rgb(53, 177, 218);
+    transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
 .darkHead {
     background-color: rgb(20, 20, 20);
 }
@@ -528,4 +531,16 @@ End of Footer-------------------------------------------------------------------
 .darkBorder {
     border-right: 5px solid white;
     border-left: 5px solid white;
+}
+
+.darkButton {
+    background-color: rgb(0, 106, 0);
+    color: whitesmoke;
+}
+
+.darkButton:hover {
+    background-color: rgb(0, 53, 0);
+    transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
 }

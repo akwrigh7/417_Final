@@ -22,7 +22,15 @@ function checkNight(nightMode){
 
         document.getElementById("contactImg").src = "Assets/stockDark3.webp";
 
-        
+        let darkButtons = document.querySelectorAll(".lightButton");
+        for(let button of darkButtons){
+            button.classList.remove("lightButton");
+            button.classList.add("darkButton");
+        }
+
+        let darkBorder3 = document.getElementById("cams");
+        darkBorder3.style.borderBottom = "5px solid whitesmoke";
+
         let darkBorders2 = document.querySelectorAll(".lightBorder");
         for(let border of darkBorders2){
             border.classList.remove("lightBorder");
@@ -40,7 +48,6 @@ function checkNight(nightMode){
             head.classList.remove("lightHead");
             head.classList.add("darkHead");
         }
-
 
         let lightMains = document.querySelectorAll(".lightMain");
         for (let head of lightMains) {
@@ -65,7 +72,14 @@ function checkNight(nightMode){
 
         document.getElementById("contactImg").src = "Assets/stock3.jpeg";
 
+        let lightButtons = document.querySelectorAll(".darkButton");
+        for(let button of lightButtons){
+            button.classList.remove("darkButton");
+            button.classList.add("lightButton");
+        }
 
+        let lightBorder3 = document.getElementById("cams");
+        lightBorder3.style.borderBottom = "5px solid black";
 
         let lightBorders2 = document.querySelectorAll(".darkBorder");
         for(let border of lightBorders2){
@@ -98,3 +112,59 @@ function checkNight(nightMode){
         }
     }
 }
+
+// Add Items to Cart
+
+let cartContents = [];
+
+let items = [
+            ["DJI FPV", 999],
+            ["DJI Mini 3", 469],
+            ["DJI Mavic 3 Pro", 2199],
+            ["DJI Mini 2", 399],
+            ["DJI Osmo Action 4", 299],
+            ["DJI Osmo Pocket 3 ", 519],
+            ["DJI Osmo Action 3", 199],
+            ["DJI Osmo Pocket 2", 279]
+        ];
+
+let btns = document.querySelectorAll(".cartBtns");
+let cartItems = document.getElementById("cartItems");
+let subTotal = document.getElementById("subTotal");
+let subT = 0;
+let cartTotal = document.getElementById("cartTotal");
+
+for(let i = 0; i < btns.length; i ++){
+    btns[i].addEventListener("click", function(){
+        cartContents.push(items[i][0]);
+
+        cartItems.innerHTML = cartContents.join("<br>");
+        subT += items[i][1];
+        subTotal.innerHTML = "$ " + subT;
+        let cartT = (subT * 1.078) + 15;
+        let fixedCartT = cartT.toFixed(2);
+        cartTotal.innerHTML = "$ " + fixedCartT;
+    });
+}
+
+
+
+
+// Clear Cart
+
+let check = document.getElementById("checkOut");
+
+function checkOut(){
+    cartItems.innerHTML = "Add Items";
+    cartContents = [];
+    subTotal.innerHTML = "$ 0.00";
+    subT = 0;
+    cartTotal.innerHTML = "$ 0.00";
+}
+
+check.addEventListener("click", function(){
+    checkOut();
+});
+
+
+
