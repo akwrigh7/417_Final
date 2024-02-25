@@ -133,16 +133,16 @@ let cartItems = document.getElementById("cartItems");
 let subTotal = document.getElementById("subTotal");
 let subT = 0;
 let cartTotal = document.getElementById("cartTotal");
+let fixedCartT;
 
 for(let i = 0; i < btns.length; i ++){
     btns[i].addEventListener("click", function(){
         cartContents.push(items[i][0]);
-
         cartItems.innerHTML = cartContents.join("<br>");
         subT += items[i][1];
         subTotal.innerHTML = "$ " + subT;
         let cartT = (subT * 1.078) + 15;
-        let fixedCartT = cartT.toFixed(2);
+        fixedCartT = cartT.toFixed(2);
         cartTotal.innerHTML = "$ " + fixedCartT;
     });
 }
@@ -153,18 +153,72 @@ for(let i = 0; i < btns.length; i ++){
 // Clear Cart
 
 let check = document.getElementById("checkOut");
+let modal = document.getElementById("modal");
+let overlay = document.getElementById("overlay");
+let modalInfo = document.getElementById("modalInfo");
+
 
 function checkOut(){
-    cartItems.innerHTML = "Add Items";
-    cartContents = [];
-    subTotal.innerHTML = "$ 0.00";
-    subT = 0;
-    cartTotal.innerHTML = "$ 0.00";
+    if(cartContents.length == 0){
+        alert("Please add items to the cart.")
+    }else{
+        modalInfo.innerHTML = `Thank You!<br><br>Order Total: $ ${fixedCartT}`;
+        modal.style.display = "block";
+        overlay.style.display = "block";
+
+        setTimeout(function(){
+            modal.style.display = "none";
+            overlay.style.display = "none";
+            cartItems.innerHTML = "Cart Empty";
+            cartContents = [];
+            subTotal.innerHTML = "$ 0.00";
+            subT = 0;
+            cartTotal.innerHTML = "$ 0.00";
+        }, 5000);
+    }
 }
 
 check.addEventListener("click", function(){
     checkOut();
+    
 });
 
 
 
+// Required Form
+
+let prefPhone = document.getElementById("prefPhone");
+let prefEmail = document.getElementById("prefEmail");
+let phone = document.getElementById("phone");
+let email = document.getElementById("email");
+let myPhone = document.getElementById("myPhone");
+let myEmail = document.getElementById("myEmail");
+
+prefPhone.addEventListener("change", function(){
+    if (prefPhone.checked){
+        myPhone.setAttribute("required", "true");
+        phone.innerHTML = "Phone<span class='required'>*</span>";
+
+        myEmail.removeAttribute("required");
+        prefEmail.checked = false;
+        email.innerHTML = "Email";
+    }else{
+        myPhone.removeAttribute("required");
+        phone.innerHTML = "Phone";
+    }
+});
+
+
+prefEmail.addEventListener("change", function(){
+    if (prefEmail.checked){
+        myEmail.setAttribute("required", "true");
+        email.innerHTML = "Email<span class='required'>*</span>";
+
+        myPhone.removeAttribute("required");
+        prefPhone.checked = false;
+        phone.innerHTML = "Phone";
+    }else{
+        myPhone.removeAttribute("required");
+        phone.innerHTML = "Email";
+    }
+});

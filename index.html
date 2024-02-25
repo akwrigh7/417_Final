@@ -161,7 +161,7 @@
                     </svg>
                     <section class="darkBorder">
                         <h4 class="hidden">Cart Contents</h4>
-                        <p id="cartItems">Add Items</p>
+                        <p id="cartItems">Cart Empty</p>
                         
                     </section>
 
@@ -191,7 +191,12 @@
                 </section>
             </div>
         </div>
-            
+        
+
+        <div id="overlay"></div>
+        <div id="modal">
+            <p id="modalInfo"></p>
+        </div>
             
 
 
@@ -207,10 +212,10 @@
                             <input type="text" name="myFirst" id="myFirst" autocomplete="given-name" required>
                             <label for="myLast" class="darkText">Last Name<span class="required">*</span></label>
                             <input type="text" name="myLast" id="myLast" autocomplete="family-name" required>
-                            <label for="myEmail" class="darkText">Email</label>
+                            <label for="myEmail" class="darkText" id="email">Email</label>
                             <input type="email" name="myEmail" id="myEmail" autocomplete="email">
-                            <label for="myPhone" class="darkText">Phone</label>
-                            <input type="tel" name="myPhone" id="myPhone" autocomplete="tel">
+                            <label for="myPhone" class="darkText" id="phone">Phone<span class="required">*</span></label>
+                            <input type="tel" name="myPhone" id="myPhone" autocomplete="tel" required>
                             <fieldset class="darkText">
                                 <legend>Preferred Contact Method<span class="required">*</span></legend>
                                 <input type="radio" name="contactPref" id="prefPhone" checked>
