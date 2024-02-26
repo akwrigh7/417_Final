@@ -113,20 +113,52 @@ function checkNight(nightMode){
     }
 }
 
-// Add Items to Cart
+//Add Items to Cart
 
 let cartContents = [];
 
 let items = [
-            ["DJI FPV", 999],
-            ["DJI Mini 3", 469],
-            ["DJI Mavic 3 Pro", 2199],
-            ["DJI Mini 2", 399],
-            ["DJI Osmo Action 4", 299],
-            ["DJI Osmo Pocket 3 ", 519],
-            ["DJI Osmo Action 3", 199],
-            ["DJI Osmo Pocket 2", 279]
-        ];
+    {
+        name:"DJI FPV",
+        price:999,
+        id:1,
+    },
+    {
+        name:"DJI Mini 3",
+        price:469,
+        id:2
+    },
+    {
+        name:"DJI Mavic 3 Pro",
+        price:2199,
+        id:3
+    },
+    {
+        name:"DJI Mini 2",
+        price:399,
+        id:4
+    },
+    {
+        name:"DJI Osmo Action 4",
+        price:299,
+        id:5
+    },
+    {
+        name:"DJI Osmo Pocket 3",
+        price:519,
+        id:6
+    },
+    {
+        name:"DJI Osmo Action 3",
+        price:199,
+        id:7
+    },
+    {
+        name:"DJI Osmo Pocket 2",
+        price:279,
+        id:8
+    },
+]
 
 let btns = document.querySelectorAll(".cartBtns");
 let cartItems = document.getElementById("cartItems");
@@ -135,19 +167,75 @@ let subT = 0;
 let cartTotal = document.getElementById("cartTotal");
 let fixedCartT;
 
+
+
+// dltBtn.addEventListener("click", function(){
+//     alert("test");
+// });
+
 for(let i = 0; i < btns.length; i ++){
     btns[i].addEventListener("click", function(){
-        cartContents.push(items[i][0]);
-        cartItems.innerHTML = cartContents.join("<br>");
-        subT += items[i][1];
+        addToCart(items[i]);
+    });
+}
+
+function deleteItem(itemID){
+    const itemIndex = cartContents.findIndex(item=>item.id===itemID)
+    if(itemIndex > -1){
+        cartContents.splice(itemIndex, 1)
+    }
+
+    renderCart()
+}
+
+
+//when delete button is clicked
+//1) filter the cartContents to return only the items that do not have the same name of the one passed in
+//2) update the DOM to show the new cart
+
+function addToCart(item){
+    cartContents.push(item);
+    
+    renderCart()
+    //look into why innerHTML was giving us an object while innerText works
+    
+  
+   
+    
+}
+function renderCart(){
+    cartItems.innerHTML='';
+    subT = 0;
+    cartContents.forEach(item=>{
+        let cartLi = document.createElement("li");
+        cartLi.textContent= item.name;
+        const deleteBtn = document.createElement('div');
+        deleteBtn.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="deleteButton w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" /></svg>`;
+      
+  
+        deleteBtn.addEventListener('click', ()=>{
+            deleteItem(item.id);
+        });
+
+        cartLi.appendChild(deleteBtn);
+        cartItems.appendChild(cartLi);
+        subT += item.price;
         subTotal.innerHTML = "$ " + subT;
         let cartT = (subT * 1.078) + 15;
         fixedCartT = cartT.toFixed(2);
         cartTotal.innerHTML = "$ " + fixedCartT;
+    
     });
+
+    if (cartContents.length === 0) {
+        let emptyCartMessage = document.createElement("li");
+        emptyCartMessage.textContent = "Empty Cart";
+        cartItems.appendChild(emptyCartMessage);
+        subTotal.innerHTML = "$ 0.00";
+        cartTotal.innerHTML = "$ 0.00";
+    }
+    
 }
-
-
 
 
 // Clear Cart
@@ -158,9 +246,13 @@ let overlay = document.getElementById("overlay");
 let modalInfo = document.getElementById("modalInfo");
 
 
+
+
+
+
 function checkOut(){
     if(cartContents.length == 0){
-        alert("Please add items to the cart.")
+        alert("Please add items to the cart.");
     }else{
         modalInfo.innerHTML = `Thank You!<br><br>Order Total: $ ${fixedCartT}`;
         modal.style.display = "block";
@@ -169,7 +261,7 @@ function checkOut(){
         setTimeout(function(){
             modal.style.display = "none";
             overlay.style.display = "none";
-            cartItems.innerHTML = "Cart Empty";
+            cartItems.innerHTML = "<li>Cart Empty</li>";
             cartContents = [];
             subTotal.innerHTML = "$ 0.00";
             subT = 0;
@@ -182,6 +274,7 @@ check.addEventListener("click", function(){
     checkOut();
     
 });
+
 
 
 
