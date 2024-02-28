@@ -1,14 +1,17 @@
+"use strict";
+
 // Night Mode
 
 let nightMode = true;
 
-let night = document.getElementById("noNight");
+let night = document.getElementById("noA");
 
 night.addEventListener("click", function(){
     nightMode === false ? nightMode = true : nightMode = false;
     checkNight(nightMode);
     console.log(nightMode);
 });
+
 
 function checkNight(nightMode){
     if (nightMode === true){
@@ -28,6 +31,12 @@ function checkNight(nightMode){
             button.classList.add("darkButton");
         }
 
+        
+        night.innerHTML = `<svg id="noNight" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="noNights darkText w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+    </svg>`
+
+
         let darkBorder3 = document.getElementById("cams");
         darkBorder3.style.borderBottom = "5px solid whitesmoke";
 
@@ -39,7 +48,7 @@ function checkNight(nightMode){
 
         let darkBorders = document.querySelectorAll("nav li:nth-child(-n+2)");
         for(let border of darkBorders){
-            border.style.borderRight = "5px solid whitesmoke";
+            border.style.borderRight = "2px solid whitesmoke";
         }
 
 
@@ -78,6 +87,12 @@ function checkNight(nightMode){
             button.classList.add("lightButton");
         }
 
+        
+        night.innerHTML = `<svg id="noNight" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="noNights lightText w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>`
+        
+      
+
         let lightBorder3 = document.getElementById("cams");
         lightBorder3.style.borderBottom = "5px solid black";
 
@@ -89,7 +104,7 @@ function checkNight(nightMode){
 
         let lightBorders = document.querySelectorAll("nav li:nth-child(-n+2)");
         for(let border of lightBorders){
-            border.style.borderRight = "5px solid black";
+            border.style.borderRight = "2px solid black";
         }
 
         let darkHeads = document.querySelectorAll(".darkHead");
@@ -168,11 +183,6 @@ let cartTotal = document.getElementById("cartTotal");
 let fixedCartT;
 
 
-
-// dltBtn.addEventListener("click", function(){
-//     alert("test");
-// });
-
 for(let i = 0; i < btns.length; i ++){
     btns[i].addEventListener("click", function(){
         addToCart(items[i]);
@@ -180,14 +190,12 @@ for(let i = 0; i < btns.length; i ++){
 }
 
 function deleteItem(itemID){
-    const itemIndex = cartContents.findIndex(item=>item.id===itemID)
+    const itemIndex = cartContents.findIndex(item=>item.id===itemID);
     if(itemIndex > -1){
-        cartContents.splice(itemIndex, 1)
+        cartContents.splice(itemIndex, 1);
     }
-
-    renderCart()
+    renderCart();
 }
-
 
 //when delete button is clicked
 //1) filter the cartContents to return only the items that do not have the same name of the one passed in
@@ -195,14 +203,9 @@ function deleteItem(itemID){
 
 function addToCart(item){
     cartContents.push(item);
-    
-    renderCart()
-    //look into why innerHTML was giving us an object while innerText works
-    
-  
-   
-    
+    renderCart();
 }
+
 function renderCart(){
     cartItems.innerHTML='';
     subT = 0;
@@ -229,7 +232,7 @@ function renderCart(){
 
     if (cartContents.length === 0) {
         let emptyCartMessage = document.createElement("li");
-        emptyCartMessage.textContent = "Empty Cart";
+        emptyCartMessage.textContent = "Cart Empty";
         cartItems.appendChild(emptyCartMessage);
         subTotal.innerHTML = "$ 0.00";
         cartTotal.innerHTML = "$ 0.00";
@@ -254,11 +257,13 @@ function checkOut(){
     if(cartContents.length == 0){
         alert("Please add items to the cart.");
     }else{
-        modalInfo.innerHTML = `Thank You!<br><br>Order Total: $ ${fixedCartT}`;
+        let modalTxt = document.getElementById("modalInfo");
+        modalTxt.innerHTML = `Order Total:<br><br>$ ${fixedCartT}`
         modal.style.display = "block";
         overlay.style.display = "block";
 
-        setTimeout(function(){
+        let modalBtn = document.getElementById("modalBtn");
+        modalBtn.addEventListener("click", function(){
             modal.style.display = "none";
             overlay.style.display = "none";
             cartItems.innerHTML = "<li>Cart Empty</li>";
@@ -266,7 +271,7 @@ function checkOut(){
             subTotal.innerHTML = "$ 0.00";
             subT = 0;
             cartTotal.innerHTML = "$ 0.00";
-        }, 5000);
+        })
     }
 }
 

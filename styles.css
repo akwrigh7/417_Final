@@ -27,12 +27,13 @@ nav a, h2, h3, p, h4, button, figcaption, form, input, textarea, #skip, #cartIte
 }
 
 h2 {
-    font-weight: bold;
+    font-weight: normal;
     font-size: 3em;
 }
 
 h3 {
     font-size: 1.8em;
+    font-weight: normal;
 }
 
 #skip {
@@ -62,7 +63,7 @@ header div {
     align-items: center;
     justify-content: space-around;
     margin: 0 auto;
-    height: 100px;
+    height: 70px;
 }
 
 /*
@@ -74,13 +75,13 @@ nav li {
 }
 
 nav li:nth-child(-n+2) {
-    border-right: 5px solid whitesmoke;
+    border-right: 2px solid whitesmoke;
 }
 
 nav a {
     text-decoration: none;
     padding: 10px;
-    font-size: 1.6em;
+    font-size: 1.2em;
     
     margin-right: 25px;
     margin-left: 25px;
@@ -96,9 +97,14 @@ nav a:hover {
 }
 
 #logo {
-    height: 60px;
+    height: 40px;
 }
 
+
+#noNight {
+    height: 50px;
+    width: 100%;
+}
 
 #noNight:hover {
     color: lightslategray;
@@ -288,8 +294,8 @@ Start of Cart
 
 #cartItems li {
     display: flex;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     justify-content: center;
 }
 
@@ -306,8 +312,8 @@ Start of Cart
 }
 
 .deleteButton {
-    height: 25px;
-    width: 25px;
+    height: 22px;
+    width: 22px;
     color: red;
     display: flex;
     margin-left: 20px;
@@ -524,8 +530,8 @@ End of Footer-------------------------------------------------------------------
 }
 
 .lightBorder {
-    border-right: 5px solid black;
-    border-left: 5px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
 }
 
 .lightButton {
@@ -552,8 +558,8 @@ End of Footer-------------------------------------------------------------------
 }
 
 .darkBorder {
-    border-right: 5px solid white;
-    border-left: 5px solid white;
+    border-right: 3px solid white;
+    border-left: 3px solid white;
 }
 
 .darkButton {
@@ -578,10 +584,36 @@ Modal
     top: 35%;
     left: 35%;
     background-color: lightgray;
-    border: 5px solid lightslategray;
-    padding: 100px;
-    font-size: 1.5em;
+    border: 3px solid lightslategray;
+    
+    
+}
+
+#modalHead {
+    background-color: rgb(83, 83, 83);
+    color: white;
+    padding: 20px 150px 20px 150px;
+    
+    
+}
+
+#modalInfo {
     text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 1.4em;
+}
+
+#modalBtn {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#modalBtn:hover {
+    color: red;
 }
 
 #overlay {
