@@ -218,12 +218,16 @@
                         <form>
                             <label for="myFirst" class="darkText">First Name<span class="required">*</span></label>
                             <input type="text" name="myFirst" id="myFirst" autocomplete="given-name" required>
+                            <div id="fNameFormErrors" class="errorTxt hide"></div>
                             <label for="myLast" class="darkText">Last Name<span class="required">*</span></label>
                             <input type="text" name="myLast" id="myLast" autocomplete="family-name" required>
-                            <label for="myEmail" class="darkText" id="email">Email</label>
-                            <input type="email" name="myEmail" id="myEmail" autocomplete="email">
+                            <div id="lNameFormErrors" class="errorTxt hide"></div>
                             <label for="myPhone" class="darkText" id="phone">Phone<span class="required">*</span></label>
                             <input type="tel" name="myPhone" id="myPhone" autocomplete="tel" required>
+                            <div id="phoneFormErrors" class="errorTxt hide"></div>
+                            <label for="myEmail" class="darkText" id="email">Email</label>
+                            <input type="email" name="myEmail" id="myEmail" autocomplete="email">
+                            <div id="emailFormErrors" class="errorTxt hide"></div>
                             <fieldset class="darkText">
                                 <legend>Preferred Contact Method<span class="required">*</span></legend>
                                 <input type="radio" name="contactPref" id="prefPhone" checked>
@@ -233,7 +237,9 @@
                             </fieldset>
                             <label for="myMessage" class="darkText">Message<span class="required">*</span></label>
                             <textarea name="myMessage" id="myMessage" required></textarea>
+                            <div id="formErrors" class="hide"></div>
                             <button type="submit" name="mySubmit" id="mySubmit" class="darkButton">Submit</button>
+                            
                         </form>
                     </section>
 

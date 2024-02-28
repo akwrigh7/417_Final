@@ -320,3 +320,133 @@ prefEmail.addEventListener("change", function(){
         phone.innerHTML = "Email";
     }
 });
+
+// Regex Validation
+
+let fNameFormErrors = document.getElementById("fNameFormErrors");
+let lNameFormErrors = document.getElementById("lNameFormErrors");
+let emailFormErrors = document.getElementById("emailFormErrors");
+let phoneFormErrors = document.getElementById("phoneFormErrors");
+
+let fName = document.getElementById("myFirst");
+let fNameError = document.createElement("p");
+let fNameValid;
+
+let lName = document.getElementById("myLast");
+let lNameError = document.createElement("p");
+let lNameValid;
+
+let emailError = document.createElement("p");
+let emailValid;
+
+let phoneError = document.createElement("p");
+let phoneValid;
+
+function checkFirstName(errorForm){
+    let fNameRe = /^[a-zA-Z]+$/
+    if (!fNameRe.test(fName.value)){
+        fName.classList.add("error");
+        fNameError.classList.remove("hide");
+        fNameError.textContent = "First name missing or invalid.";
+        errorForm.appendChild(fNameError);
+        fNameValid = false;
+    }else{
+        fNameValid = true;
+        fName.classList.remove("error");
+        fNameError.classList.add("hide");
+        fNameError.textContent = "";
+    }
+}
+
+function checkLastName(errorForm){
+    let lNameRe = /^[a-zA-Z]+$/;
+    if (!lNameRe.test(lName.value)){
+        lName.classList.add("error");
+        lNameError.classList.remove("hide");
+        lNameError.textContent = "Last name missing or invalid.";
+        errorForm.appendChild(lNameError);
+        lNameValid = false;
+    }else{
+        lNameValid = true;
+        lName.classList.remove("error");
+        lNameError.classList.add("hide");
+        lNameError.textContent = "";
+    }
+}
+
+function checkPhone(errorForm){
+    let phoneRe = /^\d{3}-\d{3}-\d{3,4}$/;
+    if (!phoneRe.test(myPhone.value)){
+        myPhone.classList.add("error");
+        phoneError.classList.remove("hide");
+        phoneError.textContent = "Phone number missing or invalid.";
+        errorForm.appendChild(phoneError);
+        phoneValid = false;
+    }else{
+        phoneValid = true;
+        myPhone.classList.remove("error");
+        phoneError.classList.add("hide");
+        phoneError.textContent = "";
+    }
+}
+
+function checkEmail(errorForm){
+    let emailRe = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
+    if (!emailRe.test(myEmail.value)){
+        myEmail.classList.add("error");
+        emailError.classList.remove("hide");
+        emailError.textContent = "Email missing or invalid.";
+        errorForm.appendChild(emailError);
+        emailValid = false;
+    }else{
+        emailValid = true;
+        myEmail.classList.remove("error");
+        emailError.classList.add("hide");
+        emailError.textContent = "";
+    }
+}
+
+
+
+
+function checkForm(){
+    checkFirstName(fNameFormErrors);
+    checkLastName(lNameFormErrors);
+
+    if(myPhone.hasAttribute("required")){
+        checkPhone(phoneFormErrors);
+    }else{
+        phoneValid = true;
+    }
+
+    if(myEmail.hasAttribute("required")){
+        checkEmail(emailFormErrors);
+    }else{
+        emailValid = true;
+    }
+    
+    if(fNameValid == true && lNameValid == true && phoneValid == true && emailValid == true){
+        fNameFormErrors.classList.add("hide");
+        fNameFormErrors.innerHTML = "";
+        lNameFormErrors.classList.add("hide");
+        lNameFormErrors.innerHTML = "";
+        phoneFormErrors.classList.add("hide");
+        phoneFormErrors.innerHTML = "";
+        emailFormErrors.classList.add("hide");
+        emailFormErrors.innerHTML = "";
+    }else{
+        fNameFormErrors.classList.remove("hide");
+        lNameFormErrors.classList.remove("hide");
+        phoneFormErrors.classList.remove("hide");
+        emailFormErrors.classList.remove("hide");
+    }
+}
+
+
+
+document.getElementById("mySubmit").addEventListener("click", function(event){
+    checkForm();
+
+    event.preventDefault();
+})
+
