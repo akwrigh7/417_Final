@@ -327,6 +327,7 @@ let fNameFormErrors = document.getElementById("fNameFormErrors");
 let lNameFormErrors = document.getElementById("lNameFormErrors");
 let emailFormErrors = document.getElementById("emailFormErrors");
 let phoneFormErrors = document.getElementById("phoneFormErrors");
+let messageFormErrors = document.getElementById("messageFormErrors");
 
 let fName = document.getElementById("myFirst");
 let fNameError = document.createElement("p");
@@ -341,6 +342,10 @@ let emailValid;
 
 let phoneError = document.createElement("p");
 let phoneValid;
+
+let message = document.getElementById("myMessage");
+let messageError = document.createElement("p");
+let messageValid;
 
 function checkFirstName(errorForm){
     let fNameRe = /^[a-zA-Z]+$/
@@ -406,6 +411,21 @@ function checkEmail(errorForm){
     }
 }
 
+function checkMessage(errorForm){
+    let messageRe = /\w+/;
+    if (!messageRe.test(message.value)){
+        message.classList.add("error");
+        messageError.classList.remove("hide");
+        messageError.textContent = "Please enter a message.";
+        errorForm.appendChild(messageError);
+        messageValid = false;
+    }else{
+        messageValid = true;
+        message.classList.remove("error");
+        messageError.classList.add("hide");
+        messageError.textContent = "";
+    }
+}
 
 
 
@@ -424,8 +444,10 @@ function checkForm(){
     }else{
         emailValid = true;
     }
+
+    checkMessage(messageFormErrors);
     
-    if(fNameValid == true && lNameValid == true && phoneValid == true && emailValid == true){
+    if(fNameValid == true && lNameValid == true && phoneValid == true && emailValid == true && messageValid == true){
         fNameFormErrors.classList.add("hide");
         fNameFormErrors.innerHTML = "";
         lNameFormErrors.classList.add("hide");
@@ -434,11 +456,14 @@ function checkForm(){
         phoneFormErrors.innerHTML = "";
         emailFormErrors.classList.add("hide");
         emailFormErrors.innerHTML = "";
+        messageFormErrors.classList.add("hide");
+        messageFormErrors.innerHTML = "";
     }else{
         fNameFormErrors.classList.remove("hide");
         lNameFormErrors.classList.remove("hide");
         phoneFormErrors.classList.remove("hide");
         emailFormErrors.classList.remove("hide");
+        messageFormErrors.classList.remove("hide");
     }
 }
 

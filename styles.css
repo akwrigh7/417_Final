@@ -645,3 +645,8 @@ Form Vaidation
     margin-top: -10px;
     font-size: .8em;
 }
+
+.errorTxt:last-of-type {
+    margin-top: 15px;
+}
+
