@@ -4,121 +4,142 @@
 
 let nightMode = true;
 
+// Get night mode element
 let night = document.getElementById("noA");
 
+// Add listener to night mode element that toggles dark mode when pressed and calls the checkNight function
 night.addEventListener("click", function(){
     nightMode === false ? nightMode = true : nightMode = false;
     checkNight(nightMode);
     console.log(nightMode);
 });
 
-
+// Function that checks whether night mode is true or false
+// If true, give all elements the dark properties
 function checkNight(nightMode){
     if (nightMode === true){
+        // Change logo to white
         document.getElementById("logo").src = "Assets/darkLogo.png";
-
+        // Change hero to dark drone
         document.getElementById("hero").src = "Assets/fpv.jpeg";
-
+        // Change first about image to dark city
         document.getElementById("abtImg1").src = "Assets/stockDark.jpeg";
-
+        // Change second about image to dark city
         document.getElementById("abtImg2").src = "Assets/stockDark2.jpeg";
-
+        // Change form image to dark river
         document.getElementById("contactImg").src = "Assets/stockDark3.webp";
 
+        // Select all buttons and loop through to change to dark styling
         let darkButtons = document.querySelectorAll(".lightButton");
         for(let button of darkButtons){
             button.classList.remove("lightButton");
             button.classList.add("darkButton");
         }
 
-        
+        // Change moon svg to sun
         night.innerHTML = `<svg id="noNight" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="noNights darkText w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
     </svg>`
 
-
+        // Change bottom border in shop to dark
         let darkBorder3 = document.getElementById("cams");
         darkBorder3.style.borderBottom = "5px solid whitesmoke";
 
+        // Change all light borders to dark by looping
         let darkBorders2 = document.querySelectorAll(".lightBorder");
         for(let border of darkBorders2){
             border.classList.remove("lightBorder");
             border.classList.add("darkBorder");
         }
 
+        // Change all other light borders to dark by looping
         let darkBorders = document.querySelectorAll("nav li:nth-child(-n+2)");
         for(let border of darkBorders){
             border.style.borderRight = "2px solid whitesmoke";
         }
 
-
+        // Change all light headings to dark by looping
         let lightHeads = document.querySelectorAll(".lightHead");
         for (let head of lightHeads) {
             head.classList.remove("lightHead");
             head.classList.add("darkHead");
         }
 
+        // Change all light main content to dark by looping
         let lightMains = document.querySelectorAll(".lightMain");
         for (let head of lightMains) {
             head.classList.remove("lightMain");
             head.classList.add("darkMain");
         }
 
+        // Change all light text content to dark by looping
         let lightTexts = document.querySelectorAll(".lightText");
         for (let head of lightTexts) {
             head.classList.remove("lightText");
             head.classList.add("darkText");
         }
         
+    // If dark mode is false, do the following
     }else{
+        // Change logo to black
         document.getElementById("logo").src = "Assets/logo.png";
 
+        // Change hero to lighter drone shot
         document.getElementById("hero").src = "Assets/mini3yt.jpeg";
 
+        // Change first about image to light mountain shot
         document.getElementById("abtImg1").src = "Assets/stock.jpeg";
 
+        // Change second about image to light skyline shot
         document.getElementById("abtImg2").src = "Assets/stock2.jpeg";
 
+        // Change form image to light lake shot
         document.getElementById("contactImg").src = "Assets/stock3.jpeg";
 
+        // Loop through all dark buttons and change to light styling
         let lightButtons = document.querySelectorAll(".darkButton");
         for(let button of lightButtons){
             button.classList.remove("darkButton");
             button.classList.add("lightButton");
         }
 
-        
+        // Change sun to moon for night mode logo
         night.innerHTML = `<svg id="noNight" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="noNights lightText w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>`
         
       
-
+        // Change borders to light styling
         let lightBorder3 = document.getElementById("cams");
         lightBorder3.style.borderBottom = "5px solid black";
 
+        // Change other borders to light styling
         let lightBorders2 = document.querySelectorAll(".darkBorder");
         for(let border of lightBorders2){
             border.classList.remove("darkBorder");
             border.classList.add("lightBorder");
         }
 
+        // Change nav borders to light styling
         let lightBorders = document.querySelectorAll("nav li:nth-child(-n+2)");
         for(let border of lightBorders){
             border.style.borderRight = "2px solid black";
         }
 
+        // Change dark heading styling to light by looping
         let darkHeads = document.querySelectorAll(".darkHead");
         for (let head of darkHeads) {
             head.classList.remove("darkHead");
             head.classList.add("lightHead");
         }
 
+        // Change dark main styling to light by looping
         let darkMains = document.querySelectorAll(".darkMain");
         for (let head of darkMains) {
             head.classList.remove("darkMain");
             head.classList.add("lightMain");
         }
 
+        // Change dark text styling to light by looping
         let darkTexts = document.querySelectorAll(".darkText");
         for (let head of darkTexts) {
             head.classList.remove("darkText");
@@ -130,8 +151,11 @@ function checkNight(nightMode){
 
 //Add Items to Cart
 
+// Create empty cart array for items to be added to
 let cartContents = [];
 
+// Create items array with each product as an object
+// Each item has a name, price, and id
 let items = [
     {
         name:"DJI FPV",
@@ -175,59 +199,85 @@ let items = [
     },
 ]
 
+// Select all cart buttons
 let btns = document.querySelectorAll(".cartBtns");
+// Select the cartItems ul
 let cartItems = document.getElementById("cartItems");
+// Select the subTotal p
 let subTotal = document.getElementById("subTotal");
+// Set subT to 0
 let subT = 0;
+// Select cartTotal p
 let cartTotal = document.getElementById("cartTotal");
+// Initialize the fixedCartT variable
 let fixedCartT;
 
-
+// Loop through each cart button and add an ecent listener that calls addToCart on the item that is clicked
 for(let i = 0; i < btns.length; i ++){
     btns[i].addEventListener("click", function(){
         addToCart(items[i]);
     });
 }
 
+// deteItem function is passed itemID parameter 
 function deleteItem(itemID){
+    // itemIndex is set equal to the index of the first item inside the items array that shares the same value as the id passed into the function
+    // findIndex with the arrow function loops through each item to find the first item with an id that matches. Then the index of that item within the items array is returned
     const itemIndex = cartContents.findIndex(item=>item.id===itemID);
+    // If a match exists, the index is used to delete that item from the cartContents array.
+    // If no match is found, findIndex returns -1 and the if statement never executes
     if(itemIndex > -1){
         cartContents.splice(itemIndex, 1);
     }
+    // After the match has been removed, the cart is re-rendered. The match will no longer be displayed within the cart.
     renderCart();
 }
 
-//when delete button is clicked
-//1) filter the cartContents to return only the items that do not have the same name of the one passed in
-//2) update the DOM to show the new cart
-
+// addToCart function is passed item parameter
 function addToCart(item){
+    // item, which is an object from the items array given as a parameter, is pushed into the cartContents array.
     cartContents.push(item);
+    // The cart is re-rendered after the item has been added to the array
     renderCart();
 }
+
 
 function renderCart(){
+    // cartItems is reset
     cartItems.innerHTML='';
+    // subT is reset
     subT = 0;
+    // For each item of cart contents:
     cartContents.forEach(item=>{
+        // an li is created 
         let cartLi = document.createElement("li");
+        // The content of that li is set to the name of the name of the item being looped over
         cartLi.textContent= item.name;
+        // A delete button is created for each item as a div
         const deleteBtn = document.createElement('div');
+        // The content of the button is set to an svg of a trashcan
         deleteBtn.innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="deleteButton w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" /></svg>`;
       
-  
+        // Each delete button is given an event listener that calls the deleteItem function
         deleteBtn.addEventListener('click', ()=>{
+            // deleteItem is passed the id of the item being looped over
             deleteItem(item.id);
         });
 
+        // The delete button is added to the li
         cartLi.appendChild(deleteBtn);
+        // The li is then added to the cart items ul
         cartItems.appendChild(cartLi);
+        // The price of the item being looped over is added to the sub total
         subT += item.price;
+        // The subT is added to the page with a "$"
         subTotal.innerHTML = "$ " + subT;
+        // cartT is set to subT multiplied by tax plus 15 for shipping
         let cartT = (subT * 1.078) + 15;
+        // fixedCartT is set to a formatted version of cartT
         fixedCartT = cartT.toFixed(2);
+        // The cartTotal is added to the page with a $
         cartTotal.innerHTML = "$ " + fixedCartT;
-    
     });
 
     if (cartContents.length === 0) {
@@ -244,9 +294,9 @@ function renderCart(){
 // Clear Cart
 
 let check = document.getElementById("checkOut");
-let modal = document.getElementById("modal");
-let overlay = document.getElementById("overlay");
-let modalInfo = document.getElementById("modalInfo");
+let shopModal = document.getElementById("shopModal");
+let shopOverlay = document.getElementById("shopOverlay");
+
 
 
 
@@ -257,15 +307,15 @@ function checkOut(){
     if(cartContents.length == 0){
         alert("Please add items to the cart.");
     }else{
-        let modalTxt = document.getElementById("modalInfo");
+        let modalTxt = document.getElementById("shopModalInfo");
         modalTxt.innerHTML = `Order Total:<br><br>$ ${fixedCartT}`
-        modal.style.display = "block";
-        overlay.style.display = "block";
+        shopModal.style.display = "block";
+        shopOverlay.style.display = "block";
 
-        let modalBtn = document.getElementById("modalBtn");
-        modalBtn.addEventListener("click", function(){
-            modal.style.display = "none";
-            overlay.style.display = "none";
+        let shopModalBtn = document.getElementById("shopModalBtn");
+        shopModalBtn.addEventListener("click", function(){
+            shopModal.style.display = "none";
+            shopOverlay.style.display = "none";
             cartItems.innerHTML = "<li>Cart Empty</li>";
             cartContents = [];
             subTotal.innerHTML = "$ 0.00";
@@ -347,6 +397,8 @@ let message = document.getElementById("myMessage");
 let messageError = document.createElement("p");
 let messageValid;
 
+let validatedForm;
+
 function checkFirstName(errorForm){
     let fNameRe = /^[a-zA-Z]+$/
     if (!fNameRe.test(fName.value)){
@@ -380,11 +432,11 @@ function checkLastName(errorForm){
 }
 
 function checkPhone(errorForm){
-    let phoneRe = /^\d{3}-\d{3}-\d{3,4}$/;
+    let phoneRe = /^\d{3}-?\d{3}-?\d{3,4}$/;
     if (!phoneRe.test(myPhone.value)){
         myPhone.classList.add("error");
         phoneError.classList.remove("hide");
-        phoneError.textContent = "Phone number missing or invalid.";
+        phoneError.textContent = "Phone number missing or invalid. Ex. 123-456-7890";
         errorForm.appendChild(phoneError);
         phoneValid = false;
     }else{
@@ -448,16 +500,67 @@ function checkForm(){
     checkMessage(messageFormErrors);
     
     if(fNameValid == true && lNameValid == true && phoneValid == true && emailValid == true && messageValid == true){
-        fNameFormErrors.classList.add("hide");
-        fNameFormErrors.innerHTML = "";
-        lNameFormErrors.classList.add("hide");
-        lNameFormErrors.innerHTML = "";
-        phoneFormErrors.classList.add("hide");
-        phoneFormErrors.innerHTML = "";
-        emailFormErrors.classList.add("hide");
-        emailFormErrors.innerHTML = "";
-        messageFormErrors.classList.add("hide");
-        messageFormErrors.innerHTML = "";
+        // fNameFormErrors.classList.add("hide");
+        // fNameFormErrors.innerHTML = "";
+        // lNameFormErrors.classList.add("hide");
+        // lNameFormErrors.innerHTML = "";
+        // phoneFormErrors.classList.add("hide");
+        // phoneFormErrors.innerHTML = "";
+        // emailFormErrors.classList.add("hide");
+        // emailFormErrors.innerHTML = "";
+        // messageFormErrors.classList.add("hide");
+        // messageFormErrors.innerHTML = "";
+        // let form = querySelector("form");
+        validatedForm = [
+            {
+                firstName:"",
+                lastName:"",
+                email:"",
+                phone:"",
+                message:""
+            }
+        ];
+
+        validatedForm.firstName = fName.value;
+        validatedForm.lastName = lName.value;
+        validatedForm.email = myEmail.value;
+        validatedForm.phone = myPhone.value;
+        validatedForm.message = message.value;
+
+        let formModal = document.getElementById("formModal");
+        let formOverlay = document.getElementById("formOverlay");
+        let formModalInfo = document.getElementById("formModalInfo");
+        let formModalBtn = document.getElementById("formModalBtn");
+
+        if(myEmail.hasAttribute("required")){
+            formModalInfo.innerHTML = `First Name:<br>${validatedForm.firstName}<br><br>
+                                         Last Name:<br>${validatedForm.lastName}<br><br>
+                                         Email:<br>${validatedForm.email}<br><br>
+                                         Message:<br>${validatedForm.message}`;
+        }else if(myPhone.hasAttribute("required")){
+            formModalInfo.innerHTML = `First Name:<br>${validatedForm.firstName}<br><br>
+                                         Last Name:<br>${validatedForm.lastName}<br><br>
+                                         Phone:<br>${validatedForm.phone}<br><br>
+                                         Message:<br>${validatedForm.message}`;
+        }
+
+
+        formModal.style.display = "block";
+        formOverlay.style.display = "block";
+
+        formModalBtn.addEventListener("click", function(){
+            formModal.style.display = "none";
+            formOverlay.style.display = "none";
+            fName.value = "";
+            lName.value = "";
+            myEmail.value = "";
+            myPhone.value = "";
+            message.value = "";
+        });
+
+
+        console.log(validatedForm);
+        
     }else{
         fNameFormErrors.classList.remove("hide");
         lNameFormErrors.classList.remove("hide");

@@ -265,7 +265,7 @@ Start of Items
 }
 
 .green {
-    color: green;
+    color: rgb(0, 106, 0);
 }
 
 /*
@@ -582,33 +582,34 @@ End of Footer-------------------------------------------------------------------
 Modal
 */
 
-#modal {
+#shopModal, #formModal {
     display: none;
     position: fixed;
-    top: 35%;
+    top: 40%;
     left: 35%;
     background-color: lightgray;
     border: 3px solid lightslategray;
-    
-    
+    text-align: center;
+    width: 450px;
 }
 
-#modalHead {
+#shopModalHead, #formModalHead {
     background-color: rgb(83, 83, 83);
     color: white;
-    padding: 20px 150px 20px 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     
     
 }
 
-#modalInfo {
-    text-align: center;
+#shopModalInfo, #formModalInfo {
+    
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 1.4em;
 }
 
-#modalBtn {
+#shopModalBtn, #formModalBtn {
     height: 40px;
     width: 40px;
     position: absolute;
@@ -616,11 +617,11 @@ Modal
     right: 0;
 }
 
-#modalBtn:hover {
+#shopModalBtn:hover, #formModalBtn:hover {
     color: red;
 }
 
-#overlay {
+#shopOverlay, #formOverlay {
     display: none;
     position: fixed;
     top: 0;
