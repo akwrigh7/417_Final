@@ -346,10 +346,12 @@ prefPhone.addEventListener("change", function(){
     if (prefPhone.checked){
         myPhone.setAttribute("required", "true");
         phone.innerHTML = "Phone<span class='required'>*</span>";
-
         myEmail.removeAttribute("required");
-        prefEmail.checked = false;
         email.innerHTML = "Email";
+        myEmail.classList.remove("error");
+        emailError.classList.add("hide");
+        emailError.textContent = "";
+        myEmail.value = "";
     }else{
         myPhone.removeAttribute("required");
         phone.innerHTML = "Phone";
@@ -361,10 +363,13 @@ prefEmail.addEventListener("change", function(){
     if (prefEmail.checked){
         myEmail.setAttribute("required", "true");
         email.innerHTML = "Email<span class='required'>*</span>";
-
         myPhone.removeAttribute("required");
-        prefPhone.checked = false;
         phone.innerHTML = "Phone";
+        
+        myPhone.classList.remove("error");
+        phoneError.classList.add("hide");
+        phoneError.textContent = "";
+        myPhone.value = "";
     }else{
         myPhone.removeAttribute("required");
         phone.innerHTML = "Email";
@@ -485,32 +490,28 @@ function checkForm(){
     checkFirstName(fNameFormErrors);
     checkLastName(lNameFormErrors);
 
-    if(myPhone.hasAttribute("required")){
+    if(myPhone.hasAttribute("required") || myPhone.value !== ""){
         checkPhone(phoneFormErrors);
     }else{
         phoneValid = true;
+        myPhone.classList.remove("error");
+        phoneError.classList.add("hide");
+        phoneError.textContent = "";
     }
 
-    if(myEmail.hasAttribute("required")){
+    if(myEmail.hasAttribute("required") || myEmail.value !== ""){
         checkEmail(emailFormErrors);
     }else{
         emailValid = true;
+        myEmail.classList.remove("error");
+        emailError.classList.add("hide");
+        emailError.textContent = "";
     }
 
     checkMessage(messageFormErrors);
     
     if(fNameValid == true && lNameValid == true && phoneValid == true && emailValid == true && messageValid == true){
-        // fNameFormErrors.classList.add("hide");
-        // fNameFormErrors.innerHTML = "";
-        // lNameFormErrors.classList.add("hide");
-        // lNameFormErrors.innerHTML = "";
-        // phoneFormErrors.classList.add("hide");
-        // phoneFormErrors.innerHTML = "";
-        // emailFormErrors.classList.add("hide");
-        // emailFormErrors.innerHTML = "";
-        // messageFormErrors.classList.add("hide");
-        // messageFormErrors.innerHTML = "";
-        // let form = querySelector("form");
+
         validatedForm = [
             {
                 firstName:"",
@@ -533,15 +534,32 @@ function checkForm(){
         let formModalBtn = document.getElementById("formModalBtn");
 
         if(myEmail.hasAttribute("required")){
-            formModalInfo.innerHTML = `First Name:<br>${validatedForm.firstName}<br><br>
-                                         Last Name:<br>${validatedForm.lastName}<br><br>
-                                         Email:<br>${validatedForm.email}<br><br>
+            if (myPhone.value == ""){
+                formModalInfo.innerHTML = `First Name:<br><strong>${validatedForm.firstName}</strong><br><br>
+                                         Last Name:<br><strong>${validatedForm.lastName}</strong><br><br>
+                                         Email:<br><strong>${validatedForm.email}</strong><br><br>
                                          Message:<br>${validatedForm.message}`;
+            }else{
+                formModalInfo.innerHTML = `First Name:<br><strong>${validatedForm.firstName}</strong><br><br>
+                                         Last Name:<br><strong>${validatedForm.lastName}</strong><br><br>
+                                         Phone:<br><strong>${validatedForm.phone}</strong><br><br>
+                                         Email:<br><strong>${validatedForm.email}</strong><br><br>
+                                         Message:<br>${validatedForm.message}`;
+            }
+            
         }else if(myPhone.hasAttribute("required")){
-            formModalInfo.innerHTML = `First Name:<br>${validatedForm.firstName}<br><br>
-                                         Last Name:<br>${validatedForm.lastName}<br><br>
-                                         Phone:<br>${validatedForm.phone}<br><br>
+            if (myEmail.value == ""){
+                formModalInfo.innerHTML = `First Name:<br><strong>${validatedForm.firstName}</strong><br><br>
+                                         Last Name:<br><strong>${validatedForm.lastName}</strong><br><br>
+                                         Phone:<br><strong>${validatedForm.phone}</strong><br><br>
                                          Message:<br>${validatedForm.message}`;
+            }else{
+                formModalInfo.innerHTML = `First Name:<br><strong>${validatedForm.firstName}</strong><br><br>
+                                         Last Name:<br><strong>${validatedForm.lastName}</strong><br><br>
+                                         Phone:<br><strong>${validatedForm.phone}</strong><br><br>
+                                         Email:<br><strong>${validatedForm.email}</strong><br><br>
+                                         Message:<br>${validatedForm.message}`;
+            }
         }
 
 
@@ -559,7 +577,12 @@ function checkForm(){
         });
 
 
-        console.log(validatedForm);
+        // console.log(validatedForm);
+        // for(let i = 0; i < formModalInfo.children.length; i++){
+        //     formModalInfo.children[i].classList.remove("error");
+        //     formModalInfo.children[i].classList.add("hide");
+        // }
+        
         
     }else{
         fNameFormErrors.classList.remove("hide");
