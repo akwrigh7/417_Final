@@ -160,7 +160,7 @@ let items = [
     {
         name:"DJI FPV",
         price:999,
-        id:1,
+        id:1
     },
     {
         name:"DJI Mini 3",
