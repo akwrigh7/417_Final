@@ -684,4 +684,37 @@ Form Vaidation
         margin-right: 30px;
         margin-bottom: 20px;
     }
+
+    #abt1 p {
+        padding-bottom: 15px;
+    }
+
+    #abt2 p {
+        border-top: 3px solid lightslategray;
+        padding-top: 15px;
+    }
+
+
+    #drones, #cams {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    #drones section, #cams section {
+        width: 280px;
+        
+        
+        
+    }
+
+    .shopHide {
+        display: none;
+    }
+
+    #cart h4 {
+        margin-bottom: 25px
+    }
 }

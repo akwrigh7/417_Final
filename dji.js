@@ -512,15 +512,14 @@ function checkForm(){
     
     if(fNameValid == true && lNameValid == true && phoneValid == true && emailValid == true && messageValid == true){
 
-        validatedForm = [
-            {
-                firstName:"",
-                lastName:"",
-                email:"",
-                phone:"",
-                message:""
-            }
-        ];
+        validatedForm = {
+            firstName:"",
+            lastName:"",
+            email:"",
+            phone:"",
+            message:""
+        };
+        
 
         validatedForm.firstName = fName.value;
         validatedForm.lastName = lName.value;
