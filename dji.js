@@ -1,6 +1,6 @@
 "use strict";
 
-// Night Mode
+// Night Mode------------------------------------------------------------------
 
 let nightMode = true;
 
@@ -149,7 +149,7 @@ function checkNight(nightMode){
     }
 }
 
-//Add Items to Cart
+// Shop functionality-------------------------------------------------------------------------------------
 
 // Create empty cart array for items to be added to
 let cartContents = [];
@@ -279,39 +279,40 @@ function renderCart(){
         // The cartTotal is added to the page with a $
         cartTotal.innerHTML = "$ " + fixedCartT;
     });
-
+    // If there is nothing in the cart, create a message that displays cart empty
     if (cartContents.length === 0) {
+        // Create message li
         let emptyCartMessage = document.createElement("li");
+        // Set the text content of the message to "cart empty"
         emptyCartMessage.textContent = "Cart Empty";
+        // Add the newly created li to the page
         cartItems.appendChild(emptyCartMessage);
+        // Set both subtotal and cart total back to 0
         subTotal.innerHTML = "$ 0.00";
         cartTotal.innerHTML = "$ 0.00";
     }
     
 }
 
-
-// Clear Cart
-
+// Create checkout modal variables
 let check = document.getElementById("checkOut");
 let shopModal = document.getElementById("shopModal");
 let shopOverlay = document.getElementById("shopOverlay");
 
-
-
-
-
-
-
+// Create checkout function to be called when button is pressed
 function checkOut(){
+    // If the cart is empty, display error message to user
     if(cartContents.length == 0){
         alert("Please add items to the cart.");
+    // If the cart has items:
     }else{
+        // Create the modal with the cart total and change the display none property
         let modalTxt = document.getElementById("shopModalInfo");
         modalTxt.innerHTML = `Order Total:<br><br>$ ${fixedCartT}`
         shopModal.style.display = "block";
         shopOverlay.style.display = "block";
 
+        // Create button within modal that when pressed, resets all values inside the cart, removes all items, and closes the modal
         let shopModalBtn = document.getElementById("shopModalBtn");
         shopModalBtn.addEventListener("click", function(){
             shopModal.style.display = "none";
@@ -325,16 +326,15 @@ function checkOut(){
     }
 }
 
+// Add event listener for checkout button that calls the checkout function
 check.addEventListener("click", function(){
     checkOut();
     
 });
 
+// Required Form--------------------------------------------------------------------------------------------------
 
-
-
-// Required Form
-
+// Create all form variables
 let prefPhone = document.getElementById("prefPhone");
 let prefEmail = document.getElementById("prefEmail");
 let phone = document.getElementById("phone");
@@ -342,7 +342,11 @@ let email = document.getElementById("email");
 let myPhone = document.getElementById("myPhone");
 let myEmail = document.getElementById("myEmail");
 
+
+// Add event listener to the prefPhone radio that checks for a change
 prefPhone.addEventListener("change", function(){
+    // If prefPhone radio is checked, give it the class and attribute of required, and change the html to include a star next to the label
+    // Also remove any info the user typed inside the email input 
     if (prefPhone.checked){
         myPhone.setAttribute("required", "true");
         phone.innerHTML = "Phone<span class='required'>*</span>";
@@ -352,14 +356,17 @@ prefPhone.addEventListener("change", function(){
         emailError.classList.add("hide");
         emailError.textContent = "";
         myEmail.value = "";
+    // If the prefPhone radio is not checked, remove the attribute of required and the star next to the label
     }else{
         myPhone.removeAttribute("required");
         phone.innerHTML = "Phone";
     }
 });
 
-
+// Add event listener to the prefEmail radio that checks for a change
 prefEmail.addEventListener("change", function(){
+    // If prefEmail radio is checked, give it the class and attribute of required, and change the html to include a star next to the label
+    // Also remove any info the user typed inside the phone input 
     if (prefEmail.checked){
         myEmail.setAttribute("required", "true");
         email.innerHTML = "Email<span class='required'>*</span>";
@@ -370,14 +377,16 @@ prefEmail.addEventListener("change", function(){
         phoneError.classList.add("hide");
         phoneError.textContent = "";
         myPhone.value = "";
+    // If the prefEmail radio is not checked, remove the attribute of required and the star next to the label
     }else{
         myPhone.removeAttribute("required");
         phone.innerHTML = "Email";
     }
 });
 
-// Regex Validation
+// Regex Validation--------------------------------------------------------------------------------------
 
+// Create all variables for error messages and their containers
 let fNameFormErrors = document.getElementById("fNameFormErrors");
 let lNameFormErrors = document.getElementById("lNameFormErrors");
 let emailFormErrors = document.getElementById("emailFormErrors");
@@ -404,46 +413,54 @@ let messageValid;
 
 let validatedForm;
 
+// Create function to check the first name with the corresponding error form as a parameter
 function checkFirstName(errorForm){
+    // Create a pattern that requires at least 1 uppercase or lowercase letter to use to test
     let fNameRe = /^[a-zA-Z]+$/
+    // If the value the user entered does not meet the requirements, make the error message visible and set the value being checked to false
     if (!fNameRe.test(fName.value)){
         fName.classList.add("error");
-        fNameError.classList.remove("hide");
         fNameError.textContent = "First name missing or invalid.";
         errorForm.appendChild(fNameError);
         fNameValid = false;
+    // If the value that the user entered does meet the requirements, set the value being checked to true and remove the error message by setting text-content to empty 
     }else{
         fNameValid = true;
         fName.classList.remove("error");
-        fNameError.classList.add("hide");
         fNameError.textContent = "";
     }
 }
 
+// Create function to check the last name with the corresponding error form as a parameter
 function checkLastName(errorForm){
+    // Create a pattern that requires at least 1 uppercase or lowercase letter to use to test
     let lNameRe = /^[a-zA-Z]+$/;
+    // If the value the user entered does not meet the requirements, make the error message visible and set the value being checked to false
     if (!lNameRe.test(lName.value)){
         lName.classList.add("error");
-        lNameError.classList.remove("hide");
         lNameError.textContent = "Last name missing or invalid.";
         errorForm.appendChild(lNameError);
         lNameValid = false;
+    // If the value that the user entered does meet the requirements, set the value being checked to true and remove the error message by setting text-content to empty 
     }else{
         lNameValid = true;
         lName.classList.remove("error");
-        lNameError.classList.add("hide");
         lNameError.textContent = "";
     }
 }
 
+// Create function to check the phone number with the corresponding error form as a parameter
 function checkPhone(errorForm){
+    // Create a pattern that requires 3 digits followed by 3 digits followed by 4 digits to use to test
     let phoneRe = /^\d{3}-?\d{3}-?\d{3,4}$/;
+    // If the value the user entered does not meet the requirements, make the error message visible and set the value being checked to false
     if (!phoneRe.test(myPhone.value)){
         myPhone.classList.add("error");
         phoneError.classList.remove("hide");
         phoneError.textContent = "Phone number missing or invalid. Ex. 123-456-7890";
         errorForm.appendChild(phoneError);
         phoneValid = false;
+    // If the value that the user entered does meet the requirements, set the value being checked to true and remove the error message by setting text-content to empty 
     }else{
         phoneValid = true;
         myPhone.classList.remove("error");
@@ -452,14 +469,18 @@ function checkPhone(errorForm){
     }
 }
 
+// Create function to check the email with the corresponding error form as a parameter
 function checkEmail(errorForm){
+    // Create a pattern that requires an email format to use to test
     let emailRe = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
+    // If the value the user entered does not meet the requirements, make the error message visible and set the value being checked to false
     if (!emailRe.test(myEmail.value)){
         myEmail.classList.add("error");
         emailError.classList.remove("hide");
         emailError.textContent = "Email missing or invalid.";
         errorForm.appendChild(emailError);
         emailValid = false;
+    // If the value that the user entered does meet the requirements, set the value being checked to true and remove the error message by setting text-content to empty 
     }else{
         emailValid = true;
         myEmail.classList.remove("error");
@@ -468,14 +489,18 @@ function checkEmail(errorForm){
     }
 }
 
+// Create function to check the message with the corresponding error form as a parameter
 function checkMessage(errorForm){
+    // Create a pattern that requires at least one letter to use to test
     let messageRe = /\w+/;
+    // If the value the user entered does not meet the requirements, make the error message visible and set the value being checked to false
     if (!messageRe.test(message.value)){
         message.classList.add("error");
         messageError.classList.remove("hide");
         messageError.textContent = "Please enter a message.";
         errorForm.appendChild(messageError);
         messageValid = false;
+    // If the value that the user entered does meet the requirements, set the value being checked to true and remove the error message by setting text-content to empty
     }else{
         messageValid = true;
         message.classList.remove("error");
@@ -485,31 +510,36 @@ function checkMessage(errorForm){
 }
 
 
-
+// Create function that checks the form
 function checkForm(){
+    // Call check first and last functions with their forms as arguments. Either return true or false
     checkFirstName(fNameFormErrors);
     checkLastName(lNameFormErrors);
 
+    // If myPhone is required or is not empty, call the checkPhone function with its form as an argument
     if(myPhone.hasAttribute("required") || myPhone.value !== ""){
         checkPhone(phoneFormErrors);
+    // If it is neither of those things, set phone's validity to true and remove any errors
     }else{
         phoneValid = true;
         myPhone.classList.remove("error");
-        phoneError.classList.add("hide");
         phoneError.textContent = "";
     }
 
+    // If myEmail is required or is not empty, call the checkEmail function with its form as an argument
     if(myEmail.hasAttribute("required") || myEmail.value !== ""){
         checkEmail(emailFormErrors);
+    // If it is neither of those things, set email's validity to true and remove any errors
     }else{
         emailValid = true;
         myEmail.classList.remove("error");
-        emailError.classList.add("hide");
         emailError.textContent = "";
     }
 
+    // Call check message function with its form as an argument. Either return true or false
     checkMessage(messageFormErrors);
     
+    // If every checked value comes back true, set the validated form to the values the user entered when the valid form was submitted
     if(fNameValid == true && lNameValid == true && phoneValid == true && emailValid == true && messageValid == true){
 
         validatedForm = {
@@ -527,11 +557,14 @@ function checkForm(){
         validatedForm.phone = myPhone.value;
         validatedForm.message = message.value;
 
+        // Create modal variables
         let formModal = document.getElementById("formModal");
         let formOverlay = document.getElementById("formOverlay");
         let formModalInfo = document.getElementById("formModalInfo");
         let formModalBtn = document.getElementById("formModalBtn");
 
+        // Create conditional statements that check what radio is checked and what boxes have been filled out
+        // If a user fills out a box that is not required, it will still show in the modal on submit, as long as it is valid
         if(myEmail.hasAttribute("required")){
             if (myPhone.value == ""){
                 formModalInfo.innerHTML = `First Name:<br><strong>${validatedForm.firstName}</strong><br><br>
@@ -561,10 +594,11 @@ function checkForm(){
             }
         }
 
-
+        // Display modal
         formModal.style.display = "block";
         formOverlay.style.display = "block";
 
+        // Add button within modal that when pressed, resets the form and closes the modal
         formModalBtn.addEventListener("click", function(){
             formModal.style.display = "none";
             formOverlay.style.display = "none";
@@ -574,15 +608,7 @@ function checkForm(){
             myPhone.value = "";
             message.value = "";
         });
-
-
-        // console.log(validatedForm);
-        // for(let i = 0; i < formModalInfo.children.length; i++){
-        //     formModalInfo.children[i].classList.remove("error");
-        //     formModalInfo.children[i].classList.add("hide");
-        // }
-        
-        
+    // If the entire form is not valid, display the corresponding error messages
     }else{
         fNameFormErrors.classList.remove("hide");
         lNameFormErrors.classList.remove("hide");
@@ -593,7 +619,7 @@ function checkForm(){
 }
 
 
-
+// Add event listener to the submit button that calls the check form function and prevents the browser from automatically submitting
 document.getElementById("mySubmit").addEventListener("click", function(event){
     checkForm();
 

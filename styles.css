@@ -17,7 +17,7 @@ body {
     
 }
 
-nav a, h2, h3, p, h4, button, figcaption, form, input, textarea, #skip, #cartItems {
+* {
     font-family: "Work Sans", sans-serif;
 }
 
@@ -175,7 +175,7 @@ Start of About Section----------------------------------------------------------
 
 figcaption {
     font-style: italic;
-    font-size: .8em;
+    font-size: .7em;
     text-align: center;
     margin-top: -15px;
 }
@@ -518,7 +518,9 @@ small {
 End of Footer------------------------------------------------------------------------------
 */
 
-
+/*
+Light and Dark Classes
+*/
 
 
 .lightHead {
@@ -579,7 +581,7 @@ End of Footer-------------------------------------------------------------------
 }
 
 /*
-Modal
+Modals
 */
 
 #shopModal, #formModal {
@@ -656,6 +658,9 @@ Form Vaidation
     margin-top: 15px;
 }
 
+/*
+Medium Screen Size
+*/
 
 @media screen and (max-width: 768px) {
     
@@ -694,20 +699,19 @@ Form Vaidation
         padding-top: 15px;
     }
 
+    #shop h3 {
+        margin-bottom: 20px;
+    }
 
     #drones, #cams {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        justify-items: center;
         max-width: 600px;
         margin: 0 auto;
     }
 
     #drones section, #cams section {
         width: 280px;
-        
-        
-        
     }
 
     .shopHide {
@@ -716,5 +720,25 @@ Form Vaidation
 
     #cart h4 {
         margin-bottom: 25px
+    }
+
+    #contactForm, #socials {
+        margin: 0 auto;
+    }
+
+    #socials {
+        margin-top: 30px;
+    }
+
+    #contact {
+        display: grid;
+        grid-template-columns: 1fr;
+        
+    }
+
+    #shopModal, #formModal {
+        left: 20%;
+        
+        margin: 0 auto;
     }
 }
