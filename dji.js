@@ -622,7 +622,6 @@ function checkForm(){
 // Add event listener to the submit button that calls the check form function and prevents the browser from automatically submitting
 document.getElementById("mySubmit").addEventListener("click", function(event){
     checkForm();
-
     event.preventDefault();
 })
 
