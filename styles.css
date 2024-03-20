@@ -1,5 +1,5 @@
 /*
-CSS Reset
+CSS Reset 
 */
 
 * {
@@ -14,7 +14,6 @@ Start of CSS
 
 body {
     margin: 0 auto;
-    
 }
 
 * {
@@ -50,12 +49,11 @@ h3 {
     color: black;
     left: 50%;
     text-decoration: none;
-  }
-  
-  #skip:focus {
+}
+
+#skip:focus {
     transform: translateY(0%);
-    
-  }
+}
 
 /*
 Header
@@ -78,7 +76,7 @@ nav li {
     list-style-type: none;
 }
 
-nav li:nth-child(-n+2) {
+nav li:nth-child(-n + 2) {
     border-right: 2px solid whitesmoke;
 }
 
@@ -86,7 +84,7 @@ nav a {
     text-decoration: none;
     padding: 10px;
     font-size: 1.2em;
-    
+
     margin-right: 25px;
     margin-left: 25px;
 }
@@ -97,13 +95,11 @@ nav ul {
 
 nav a:hover {
     color: lightslategray;
-    
 }
 
 #logo {
     height: 40px;
 }
-
 
 #noNight {
     height: 50px;
@@ -118,7 +114,6 @@ nav a:hover {
 Start of Main Content
 */
 
-
 /*
 Hero Image
 */
@@ -129,8 +124,6 @@ Hero Image
     width: 100%;
     display: block;
 }
-
-
 
 /*
 Start of About Section------------------------------------------------------------------------------
@@ -150,18 +143,19 @@ Start of About Section----------------------------------------------------------
 }
 
 .aboutPhoto {
-    
     width: 600px;
     margin-left: 30px;
     margin-right: 30px;
 }
 
-#abt1, #abt2 {
+#abt1,
+#abt2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
-#abt1 p, #abt2 p {
+#abt1 p,
+#abt2 p {
     width: 550px;
     margin: -50px auto 0 30px;
     display: flex;
@@ -170,12 +164,11 @@ Start of About Section----------------------------------------------------------
 
 #abt2 {
     margin-top: 50px;
-    
 }
 
 figcaption {
     font-style: italic;
-    font-size: .7em;
+    font-size: 0.7em;
     text-align: center;
     margin-top: -15px;
 }
@@ -197,7 +190,8 @@ Start of Shop Section-----------------------------------------------------------
     margin: 0 auto;
 }
 
-#shopHead, #contactHead {
+#shopHead,
+#contactHead {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -206,47 +200,49 @@ Start of Shop Section-----------------------------------------------------------
 #shop h3 {
     text-align: center;
     margin-top: 30px;
-    
 }
 
 /*
 Start of Items
 */
 
-#drones img, #cams img {
+#drones img,
+#cams img {
     background-color: lightgray;
     height: 240px;
     width: 240px;
     border-radius: 8%;
 }
 
-#drones, #cams {
+#drones,
+#cams {
     display: flex;
     justify-content: space-around;
     margin: 25px;
 }
 
-#drones section, #cams section {
-    
-    
+#drones section,
+#cams section {
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
     height: 360px;
 }
 
-#cams h4, #drones h4 {
+#cams h4,
+#drones h4 {
     font-size: 1.5em;
     text-align: center;
     padding-bottom: 10px;
 }
 
-#cams p, #drones p {
+#cams p,
+#drones p {
     font-size: 1.7em;
-    
 }
 
-#cams button, #drones button {
+#cams button,
+#drones button {
     border-radius: 10px;
     cursor: pointer;
     padding: 6px;
@@ -303,7 +299,8 @@ Start of Cart
     justify-content: center;
 }
 
-#cart h4, #cart p {
+#cart h4,
+#cart p {
     font-size: 1.3em;
     text-align: center;
 }
@@ -312,7 +309,6 @@ Start of Cart
     font-size: 1.3em;
     list-style-type: none;
     text-align: center;
-    
 }
 
 .deleteButton {
@@ -330,16 +326,14 @@ Start of Cart
 
 #checkOut {
     padding: 20px;
-    
+
     font-size: 1.1em;
     border-radius: 10px;
     cursor: pointer;
 }
 
 #checkOut:hover {
-    
     transform: translateY(-10px);
-
 }
 
 /*
@@ -376,7 +370,6 @@ Start of Contact----------------------------------------------------------------
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
 }
 
 #socialSVG svg {
@@ -393,13 +386,11 @@ Start of Contact----------------------------------------------------------------
 #contactDiv h2 {
     text-align: center;
     padding-bottom: 5px;
-    
 }
 
 #contact h3 {
     text-align: center;
     margin-bottom: 20px;
-    
 }
 
 /*
@@ -410,19 +401,20 @@ form {
     margin-left: 30px;
     margin-right: 30px;
     width: 560px;
-    
 }
 
 .required {
     color: red;
 }
 
-input, fieldset, textarea {
+input,
+fieldset,
+textarea {
     border: 3px solid rgb(157, 157, 157);
-    
 }
 
-input, textarea {
+input,
+textarea {
     margin-top: 5px;
 }
 
@@ -431,10 +423,9 @@ input {
     height: 60px;
     display: block;
     margin-bottom: 30px;
-    font-size: .8em;
+    font-size: 0.8em;
     padding-left: 20px;
     width: 100%;
-    
 }
 
 fieldset {
@@ -448,7 +439,7 @@ textarea {
     display: block;
     width: 100%;
     height: 90px;
-    font-size: .8em;
+    font-size: 0.8em;
     padding-left: 20px;
     border: 3px solid rgb(157, 157, 157);
     background-color: whitesmoke;
@@ -458,16 +449,14 @@ legend {
     margin-left: 20px;
 }
 
-#prefPhone, #prefEmail {
-    
+#prefPhone,
+#prefEmail {
     width: 20px;
     padding: 0;
     margin: 0;
     margin-left: 30px;
     margin-right: 10px;
-    
 }
-
 
 #mySubmit {
     width: 200px;
@@ -477,12 +466,11 @@ legend {
     margin-top: 30px;
     cursor: pointer;
     padding: 20px;
-    font-size: .8em;
+    font-size: 0.8em;
 }
 
 #mySubmit:hover {
     transform: translateY(-10px);
-    
 }
 
 /*
@@ -508,10 +496,8 @@ Start of Footer-----------------------------------------------------------------
     align-items: center;
 }
 
-
 small {
     font-size: 1.3em;
-    
 }
 
 /*
@@ -521,7 +507,6 @@ End of Footer-------------------------------------------------------------------
 /*
 Light and Dark Classes
 */
-
 
 .lightHead {
     background-color: rgb(157, 157, 157);
@@ -548,7 +533,8 @@ Light and Dark Classes
 .lightButton:hover {
     background-color: rgb(30, 175, 86);
     transform: translateY(-2px);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 .darkHead {
@@ -576,15 +562,16 @@ Light and Dark Classes
 .darkButton:hover {
     background-color: rgb(0, 53, 0);
     transform: translateY(-2px);
-    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+        rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 /*
 Modals
 */
 
-#shopModal, #formModal {
+#shopModal,
+#formModal {
     display: none;
     position: fixed;
     top: 35%;
@@ -599,24 +586,25 @@ Modals
     word-wrap: break-word;
     margin-left: 30px;
     margin-right: 30px;
-    
 }
 
-#shopModalHead, #formModalHead {
+#shopModalHead,
+#formModalHead {
     background-color: rgb(83, 83, 83);
     color: white;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-#shopModalInfo, #formModalInfo {
-    
+#shopModalInfo,
+#formModalInfo {
     margin-top: 30px;
     margin-bottom: 30px;
     font-size: 1.4em;
 }
 
-#shopModalBtn, #formModalBtn {
+#shopModalBtn,
+#formModalBtn {
     height: 40px;
     width: 40px;
     position: absolute;
@@ -624,11 +612,13 @@ Modals
     right: 0;
 }
 
-#shopModalBtn:hover, #formModalBtn:hover {
+#shopModalBtn:hover,
+#formModalBtn:hover {
     color: red;
 }
 
-#shopOverlay, #formOverlay {
+#shopOverlay,
+#formOverlay {
     display: none;
     position: fixed;
     top: 0;
@@ -651,7 +641,7 @@ Form Vaidation
     text-align: center;
     margin-bottom: 20px;
     margin-top: -10px;
-    font-size: .8em;
+    font-size: 0.8em;
 }
 
 .errorTxt:last-of-type {
@@ -663,8 +653,6 @@ Medium Screen Size
 */
 
 @media screen and (max-width: 768px) {
-    
-
     .aboutPhoto {
         width: 91%;
         margin: 0 auto;
@@ -679,11 +667,13 @@ Medium Screen Size
         margin-top: 0;
     }
 
-    #abt1, #abt2 {
+    #abt1,
+    #abt2 {
         display: block;
     }
 
-    #abt1 p, #abt2 p {
+    #abt1 p,
+    #abt2 p {
         width: auto;
         margin-left: 30px;
         margin-right: 30px;
@@ -703,14 +693,16 @@ Medium Screen Size
         margin-bottom: 20px;
     }
 
-    #drones, #cams {
+    #drones,
+    #cams {
         display: grid;
         grid-template-columns: 1fr 1fr;
         max-width: 600px;
         margin: 0 auto;
     }
 
-    #drones section, #cams section {
+    #drones section,
+    #cams section {
         width: 280px;
     }
 
@@ -719,10 +711,11 @@ Medium Screen Size
     }
 
     #cart h4 {
-        margin-bottom: 25px
+        margin-bottom: 25px;
     }
 
-    #contactForm, #socials {
+    #contactForm,
+    #socials {
         margin: 0 auto;
     }
 
@@ -733,12 +726,12 @@ Medium Screen Size
     #contact {
         display: grid;
         grid-template-columns: 1fr;
-        
     }
 
-    #shopModal, #formModal {
+    #shopModal,
+    #formModal {
         left: 20%;
-        
+
         margin: 0 auto;
     }
 }
