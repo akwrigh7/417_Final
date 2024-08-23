@@ -735,3 +735,48 @@ Medium Screen Size
         margin: 0 auto;
     }
 }
+
+@media screen and (max-width: 576px) {
+    #drones,
+    #cams {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    #drones section,
+    #cams section {
+        width: 280px;
+    }
+
+    .shopHide {
+        display: none;
+    }
+
+    #cart h4 {
+        margin-bottom: 25px;
+    }
+
+    #contactForm,
+    #socials {
+        margin: 0 auto;
+    }
+
+    #socials {
+        margin-top: 30px;
+        background-color: aqua;
+    }
+
+    #contact {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    #shopModal,
+    #formModal {
+        left: 20%;
+
+        margin: 0 auto;
+    }
+}
