@@ -754,8 +754,13 @@ Medium Screen Size
         width: 280px;
     }
 
-    #contactForm {
-        max-width: 376px;
+    #contactForm input {
+        max-width: 400px;
+    }
+
+    #contactImg {
+        width: 50%;
+        height: 50%;
     }
 
     .shopHide {
