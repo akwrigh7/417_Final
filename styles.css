@@ -755,14 +755,15 @@ Medium Screen Size
     }
 
     #contactForm input {
-        max-width: 400px;
+        max-width: 576px;
     }
 
     #contactImg {
-        height: 500px;
+        height: 400px;
     }
 
     #socials {
+        margin-left: 0;
     }
 
     #shopModal,
