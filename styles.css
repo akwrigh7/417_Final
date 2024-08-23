@@ -737,8 +737,9 @@ Medium Screen Size
 }
 
 @media screen and (max-width: 576px) {
-    html {
-        max-width: 576px;
+    html,
+    body {
+        overflow-x: hidden;
     }
 
     #drones,
@@ -760,6 +761,15 @@ Medium Screen Size
 
     #contactImg {
         height: 400px;
+    }
+
+    #cart {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cart section {
+        margin-bottom: 30px;
     }
 
     #socials {
