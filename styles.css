@@ -760,45 +760,13 @@ Medium Screen Size
 
     #contactImg {
         height: 500px;
-        margin: 0;
-    }
-
-    .shopHide {
-        display: none;
-    }
-
-    #cart {
-        display: flex;
-        flex-direction: column;
-    }
-
-    #cart section {
-        margin-bottom: 30px;
-    }
-
-    #cart h4 {
-        margin-bottom: 25px;
-    }
-
-    #contactForm,
-    #socials {
-        margin: 0 auto;
     }
 
     #socials {
-        margin-top: 30px;
-        background-color: aqua;
-    }
-
-    #contact {
-        display: grid;
-        grid-template-columns: 1fr;
     }
 
     #shopModal,
     #formModal {
-        left: 20%;
-
-        margin: 0 auto;
+        left: 5%;
     }
 }
