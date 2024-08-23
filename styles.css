@@ -738,14 +738,14 @@ Medium Screen Size
 
 @media screen and (max-width: 576px) {
     html {
-        width: 100%;
+        max-width: 576px;
     }
 
     #drones,
     #cams {
         display: grid;
         grid-template-columns: 1fr;
-
+        max-width: 280px;
         margin: 0 auto;
     }
 
@@ -756,6 +756,15 @@ Medium Screen Size
 
     .shopHide {
         display: none;
+    }
+
+    #cart {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #cart section {
+        margin-bottom: 30px;
     }
 
     #cart h4 {
