@@ -754,6 +754,10 @@ Medium Screen Size
         width: 280px;
     }
 
+    #contactForm {
+        max-width: 376px;
+    }
+
     .shopHide {
         display: none;
     }
